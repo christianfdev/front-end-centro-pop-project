@@ -1,0 +1,15 @@
+.input {
+  height: 46px;
+  padding: 0 16px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  font-family: 'Poppins', sans-serif;
+  outline: 0;
+  transition: .2s;
+  margin-top: 20px;
+  line-break: normal;
+}
+
+.input:focus {
+  border-color: #0f7ef1;
+}
