@@ -1,0 +1,51 @@
+.home {
+  background-color: #58AA93;
+  height: 525px;
+  width: auto;
+}
+
+
+.navbar{
+  height: 3.4rem;
+  width: auto;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+
+.infoUser {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+  gap: 0.2rem;
+}
+
+.sair {
+  padding-left: 74.5rem;
+}
+
+.options {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  gap: 50px;
+  
+}
+
+.section {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 20px;
+  box-sizing: border-box;
+  height: 350px;
+  width: 330px;
+  gap: 40px;
+  padding: 20px;
+}
