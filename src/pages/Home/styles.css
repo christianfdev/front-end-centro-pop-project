@@ -1,6 +1,6 @@
 .home {
   background-color: #58AA93;
-  height: 525px;
+  height: 625px;
   width: auto;
 }
 
@@ -12,6 +12,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  font-family: 'Poppins', sans-serif;
 }
 
 
@@ -19,33 +20,46 @@
   display: flex;
   flex-direction: column;
   padding-left: 1rem;
-  gap: 0.2rem;
+  font-weight: 500;
 }
 
 .sair {
-  padding-left: 74.5rem;
+  padding-left: 72.5rem;
+  font-weight: 500;
+  font-size: 16px;
 }
 
 .options {
-  height: 100%;
-  width: 100%;
+  height: 550px;
   display: flex;
   align-items: center;
   justify-content: center;
-  
   gap: 50px;
-  
+
 }
+
 
 .section {
   background-color: #fff;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   border-radius: 20px;
   box-sizing: border-box;
   height: 350px;
   width: 330px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   gap: 40px;
-  padding: 20px;
+ 
+}
+
+.title{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  text-align: center;
+  padding-top: 0.2rem;
 }

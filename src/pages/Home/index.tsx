@@ -18,14 +18,20 @@ export function Home(){
 
         <section className='options'>
           <div className='section'>
-            <Button text='Novo Cadastro'/>
-            <Button text='Listar Assistidos'/>
-            <Button text='Meus Cadastros'/>
+            <span className='title'>Minha Atividade</span>
+            <div className='buttons'>
+              <Button text='Meus Cadastros'/>
+              <Button text='Minhas Evoluções'/>
+            </div>
           </div>
           <div className='section'>
-            <Button text='Nova Evolução'/>
-            <Button text='Pesquisar Evolução'/>
-            <Button text='Minhas Evoluções'/>
+            <span className='title'>Assistidos</span>
+            <div className='buttons'>
+              <Button text='Novo Cadastro'/>
+              <Button text='Listar Assistidos'/>
+              <Button text='Nova Evolução'/>
+              <Button text='Pesquisar Evolução'/>
+            </div>
           </div>
         </section>
       </div>

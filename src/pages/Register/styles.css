@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: #58AA93;
+  height: 625px;
+  width: auto;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.input {
+  height: 20px;
+  width: 270px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  font-family: 'Poppins', sans-serif;
+  outline: 0;
+  transition: .2s;
+}
+
+.input:focus {
+  border-color: #0f7ef1;
+}
