@@ -1,9 +1,31 @@
-.container {
+
+.register{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #58AA93;
+}
+
+
+
+.containerRegister {
   display: flex;
   flex-direction: column;
-  background-color: #58AA93;
-  height: 625px;
-  width: auto;
+  background-color: #fff;
+  align-items: center;
+  border-radius: 20px;
+  box-sizing: border-box;
+  height: 500px;
+  width: 850px;
+  padding: 20px;
+}
+
+.registerTitle {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: #ADCB5C;
+  padding-bottom: 20px;
 }
 
 .form {
@@ -12,16 +34,18 @@
   text-align: left;
 }
 
-.input {
-  height: 20px;
-  width: 270px;
+.input-register {
+  height: 25px;
+  width: 350px;
   border: 2px solid #ddd;
   border-radius: 4px;
   font-family: 'Poppins', sans-serif;
   outline: 0;
   transition: .2s;
+  margin-bottom: 10px;
 }
 
-.input:focus {
+.input-register:focus {
   border-color: #0f7ef1;
 }
+

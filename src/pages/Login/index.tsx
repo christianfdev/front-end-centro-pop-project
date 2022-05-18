@@ -1,6 +1,6 @@
 import logo from './centropop.png'
 import { Component } from 'react'
-import './styles.css'
+import './styles.css';
 import { useNavigate } from 'react-router-dom';
 import { InputText } from '../../components/InputText';
 import { InputPassword } from '../../components/InputPassword';

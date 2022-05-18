@@ -1,7 +1,10 @@
 import './styles.css';
 import { Button } from '../../components/Button';
+import { useNavigate } from 'react-router-dom';
 
 export function Home(){
+
+  let navigate = useNavigate();
 
     return(
       <div className='home'>
@@ -27,7 +30,7 @@ export function Home(){
           <div className='section'>
             <span className='title'>Assistidos</span>
             <div className='buttons'>
-              <Button text='Novo Cadastro'/>
+              <Button text='Novo Cadastro' onClick={ () => {navigate("/register")}}/>
               <Button text='Listar Assistidos'/>
               <Button text='Nova Evolução'/>
               <Button text='Pesquisar Evolução'/>

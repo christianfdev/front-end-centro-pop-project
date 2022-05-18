@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import './styles.css';
+import { Button } from '../../components/Button';
+import { useNavigate } from 'react-router-dom';
 
 export function Register() {
 
@@ -25,38 +27,45 @@ export function Register() {
   const [situation, setSituation] = useState('');
   const [schooling, setSchooling] = useState('');
   const [relactory, setRelactory] = useState('');
+
+  let navigate = useNavigate();
   
   return(
-    <div className='container'>
-      <h1>Cadastro Socioassistencial</h1>
+    <div className="register">
+
+    <div className='containerRegister'>
+      <h1 className='registerTitle'>Cadastro Socioassistencial</h1>
       <form className='form'>
 
         <label className='label'>
           Nome
         </label>
-        <input className='input' type="text"/>
+        <input className='input-register' type="text"/>
         
 
         <label className='label'>
           Nome Social/ Apelido:
-          <input type="text"/>
         </label>
+        <input className='input-register' type="text"/>
+
         <span>Filiação</span> 
         <label>
           Nome da mãe:
-          <input type="text" placeholder=''/>
         </label>
+        <input className='input-register' type="text"/>
         <label>
           Nome do pai: 
-          <input type="text" placeholder=''/>
         </label>
+        <input className='input-register' type="text"/>
 
 
-
-        <button type='submit' onSubmit={() => console.log('s')}>Cadastrar</button>
-
+        <Button 
+           onClick={ () => {navigate("/home")}}
+           text="Cadastrar"
+        />
 
       </form>
+    </div>
     </div>
   )
 }
