@@ -1,6 +1,6 @@
 .home {
   background-color: #58AA93;
-  height: 625px;
+  height: 970px;
   width: auto;
 }
 
@@ -12,6 +12,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -24,13 +25,13 @@
 }
 
 .sair {
-  padding-left: 72.5rem;
   font-weight: 500;
   font-size: 16px;
+  padding-right: 1rem;
 }
 
 .options {
-  height: 550px;
+  height: 850px;
   display: flex;
   align-items: center;
   justify-content: center;

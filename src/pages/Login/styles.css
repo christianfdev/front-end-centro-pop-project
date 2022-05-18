@@ -2,12 +2,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 60.625rem;
     background-color: #58AA93;
   }
   
   .Login-logo {
-    height: 40vmin;
+    height: 30vmin;
     pointer-events: none;
   }
 
@@ -39,9 +39,9 @@
     justify-content: center;
     border-radius: 20px;
     box-sizing: border-box;
-    height: 500px;
-    padding: 20px;
-    width: 850px;
+    height: 520px;
+    padding: 40px;
+    width: 950px;
     gap: 50px;
   }  
 

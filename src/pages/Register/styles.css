@@ -19,10 +19,21 @@
   height: 500px;
   width: 850px;
   padding: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.containerRegister span {
+  font-weight: 500;
+  font-size: 14px;
+  padding-top: 4px;
+}
+
+.label {
+  font-weight: 300;
+  font-size: 14px;
 }
 
 .registerTitle {
-  font-family: 'Poppins', sans-serif;
   font-weight: 700;
   color: #ADCB5C;
   padding-bottom: 20px;

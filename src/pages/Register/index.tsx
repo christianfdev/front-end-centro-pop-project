@@ -49,11 +49,11 @@ export function Register() {
         <input className='input-register' type="text"/>
 
         <span>Filiação</span> 
-        <label>
+        <label className='label'>
           Nome da mãe:
         </label>
         <input className='input-register' type="text"/>
-        <label>
+        <label className='label'>
           Nome do pai: 
         </label>
         <input className='input-register' type="text"/>
