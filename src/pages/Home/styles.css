@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .Home {
     display: flex;
     justify-content: center;
@@ -53,3 +54,71 @@
     padding: 12px;
   }
   
+=======
+.home {
+  background-color: #58AA93;
+  height: 970px;
+  width: auto;
+}
+
+
+.navbar{
+  height: 3.4rem;
+  width: auto;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.infoUser {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+  font-weight: 500;
+}
+
+.sair {
+  font-weight: 500;
+  font-size: 16px;
+  padding-right: 1rem;
+}
+
+.options {
+  height: 850px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+
+}
+
+
+.section {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  box-sizing: border-box;
+  height: 350px;
+  width: 330px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+ 
+}
+
+.title{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  text-align: center;
+  padding-top: 0.2rem;
+}
+>>>>>>> v01

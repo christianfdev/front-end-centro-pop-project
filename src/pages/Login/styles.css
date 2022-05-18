@@ -1,0 +1,56 @@
+.Login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60.625rem;
+    background-color: #58AA93;
+  }
+  
+  .Login-logo {
+    height: 30vmin;
+    pointer-events: none;
+  }
+
+  .login-form h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: #ADCB5C;
+  }
+
+  .login-form a {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    text-decoration: underline;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  
+
+  .container {
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border-radius: 20px;
+    box-sizing: border-box;
+    height: 520px;
+    padding: 40px;
+    width: 950px;
+    gap: 50px;
+  }  
+
+  .inputs {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .buttons {
+    padding: 12px;
+  }
+  

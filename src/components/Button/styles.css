@@ -1,12 +1,21 @@
 .button{
   font-family: 'Poppins', sans-serif;
+<<<<<<< HEAD
   color: #ADCB5C;
+=======
+  color: #fff;
+>>>>>>> v01
   font-weight: 700;
   padding: 10px 75px;
   background-color: rgb(60, 116, 100);
   transition: 0.5s;
   border-radius: 4px;
+<<<<<<< HEAD
   border:none;
+=======
+  border: none;
+  cursor: pointer;
+>>>>>>> v01
 
 }
 
