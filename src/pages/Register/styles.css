@@ -1,6 +1,6 @@
 
 .register{
-  min-height: 100vh;
+  height: 1500px;
   background-color: #58AA93;
 }
 
@@ -21,7 +21,6 @@
 }
 
 .sectionRegister {
-  height: 850px;
   display: flex;
   justify-content: center;
   padding-top: 20px;
@@ -35,7 +34,7 @@
   align-items: center;
   border-radius: 20px;
   box-sizing: border-box;
-  height: 500px;
+  height: 1415px;
   width: 850px;
   padding: 20px;
   font-family: 'Poppins', sans-serif;

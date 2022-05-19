@@ -44,7 +44,7 @@ export function Assisted() {
         </div>
     </nav>
 
-    <section className='sectionRegister'>
+    <section className='sectionAssisted'>
 
     <div className='containerAssisted'>
 

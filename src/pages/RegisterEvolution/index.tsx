@@ -1,6 +1,8 @@
 import './styles.css';
 import { Button } from '../../components/Button';
 import { useNavigate } from 'react-router-dom';
+import { TextArea } from '../../components/TextArea';
+import { FormOption } from '../../components/FormOption';
 
 export function RegisterEvolution(){
 
@@ -27,16 +29,14 @@ export function RegisterEvolution(){
       <h1 className='registerTitle'>Informações de Registro</h1>
       <form className='form'>
 
-        <label className='label-evolution'>
-          Data
-        </label>
-        <input className='input-register' type="text"/>
-        
+
+        <FormOption labelClass='bold' text='Data'/>
 
         <label className='label-evolution'>
           Descrição das atividades realizadas
         </label>
-        <textarea className='textarea' />
+
+        <TextArea />
 
         <Button 
            onClick={ () => {navigate("/home")}}

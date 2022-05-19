@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './styles.css';
 import { Button } from '../../components/Button';
 import { useNavigate } from 'react-router-dom';
+import { FormOption } from '../../components/FormOption';
 
 export function Register() {
 
@@ -51,33 +52,34 @@ export function Register() {
       <h1 className='registerTitle'>Dados do Assistido</h1>
       <form className='form'>
 
-        <label className='label'>
-          Nome
-        </label>
-        <input className='input-register' type="text"/>
-        
-
-        <label className='label'>
-          Nome Social/ Apelido:
-        </label>
-        <input className='input-register' type="text"/>
-
+        <FormOption text='Nome'/>
+        <FormOption text='Nome Social/ Apelido'/>
         <span>Filiação</span> 
-        <label className='label'>
-          Nome da mãe:
-        </label>
-        <input className='input-register' type="text"/>
-        <label className='label'>
-
-          Nome do pai: 
-        </label>
-        <input className='input-register' type="text"/>
+        <FormOption text='Nome da Mãe'/>
+        <FormOption text='Nome do Pai'/>
+        <FormOption text='Sexo'/>
+        <FormOption text='Data de Nascimento'/>
+        <FormOption text='Nacionalidade'/>
+        <FormOption text='Número de Telefone/ Celular'/>
+        <FormOption text='Cidade em que reside'/>
+        <FormOption text='RG'/>
+        <FormOption text='Orgão expedidor'/>
+        <FormOption text='UF'/>
+        <FormOption text='Data de Expedição'/>
+        <FormOption text='CPF'/>
+        <FormOption text='Reservista'/>
+        <FormOption text='Carteira de Trabalho'/>
+        <FormOption text='Certidão de Nascimento'/>
+        <FormOption text='NIS'/>
+        <FormOption text='Recebe algum benefício. Se sim, quais.'/>
+        <FormOption text='Situação'/>
+        <FormOption text='Escolaridade'/>
 
 
         <Button 
            onClick={ () => {navigate("/home")}}
            text="Cadastrar"
-           />
+        />
 
       </form>
     </div>
