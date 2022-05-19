@@ -31,9 +31,8 @@ export function Home(){
             <span className='title'>Assistidos</span>
             <div className='buttons'>
               <Button text='Novo Cadastro' onClick={ () => {navigate("/register")}}/>
-              <Button text='Listar Assistidos'/>
-              <Button text='Nova Evolução'/>
-              <Button text='Pesquisar Evolução'/>
+              <Button text='Listar Assistidos' onClick={ () => {navigate("/assisteds")}}/>
+              <Button text='Nova Evolução' onClick={ () => {navigate("/new-evolution")}}/>
             </div>
           </div>
         </section>

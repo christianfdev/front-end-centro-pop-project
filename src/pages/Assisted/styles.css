@@ -28,11 +28,10 @@
 }
 
 
-.containerRegister {
+.containerAssisted {
   display: flex;
   flex-direction: column;
   background-color: #fff;
-  align-items: center;
   border-radius: 20px;
   box-sizing: border-box;
   height: 500px;
@@ -41,10 +40,12 @@
   font-family: 'Poppins', sans-serif;
 }
 
-.containerRegister span {
-  font-weight: 500;
-  font-size: 14px;
-  padding-top: 4px;
+.containerAssisted span {
+  font-weight: 700;
+}
+
+.userData {
+  padding-top: 20px;
 }
 
 .label {
@@ -52,11 +53,13 @@
   font-size: 14px;
 }
 
-.registerTitle {
+
+.assistedTitle {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
   color: #ADCB5C;
   padding-bottom: 20px;
+  text-align: center;
 }
 
 .form {

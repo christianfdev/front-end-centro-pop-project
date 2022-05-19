@@ -1,9 +1,8 @@
 import { useState } from 'react'
 import './styles.css';
-import { Button } from '../../components/Button';
 import { useNavigate } from 'react-router-dom';
 
-export function Register() {
+export function Assisted() {
 
   const [name, setName] = useState('');
   const [socialName, setSocialName] = useState('');
@@ -39,7 +38,7 @@ export function Register() {
           <p>Christian</p>
           <p>Orientador Social</p>
         </div>
-        <h1>Cadastro Socioassistencial</h1>
+        <h1>Dados do Assistido</h1>
         <div className='sair'>
           <p>Sair</p>
         </div>
@@ -47,39 +46,22 @@ export function Register() {
 
     <section className='sectionRegister'>
 
-    <div className='containerRegister'>
-      <h1 className='registerTitle'>Dados do Assistido</h1>
-      <form className='form'>
+    <div className='containerAssisted'>
 
-        <label className='label'>
-          Nome
-        </label>
-        <input className='input-register' type="text"/>
-        
+      <h1 className='assistedTitle'>CARLOS AUGUSTO LOPES SPINDOLA</h1>
 
-        <label className='label'>
-          Nome Social/ Apelido:
-        </label>
-        <input className='input-register' type="text"/>
-
-        <span>Filiação</span> 
-        <label className='label'>
-          Nome da mãe:
-        </label>
-        <input className='input-register' type="text"/>
-        <label className='label'>
-
-          Nome do pai: 
-        </label>
-        <input className='input-register' type="text"/>
+      <div className='userData'>
+        <p><span>Nome:</span>  Carlos Augusto Lopes Spindola </p>
+        <p><span>Nome Social/ Apelido:</span>  Gastão </p>
+        <p><span>Mãe:</span>  Joana Lopes Spindola </p>
+        <p><span>Pai:</span>  José Lopes Spindola </p>
+        <p><span>Sexo:</span>  Masculino </p>
+        <p><span>Data de Nascimento:</span>  19/08/1979 </p>
 
 
-        <Button 
-           onClick={ () => {navigate("/home")}}
-           text="Cadastrar"
-           />
+      </div>
 
-      </form>
+
     </div>
     </section>
     </div>

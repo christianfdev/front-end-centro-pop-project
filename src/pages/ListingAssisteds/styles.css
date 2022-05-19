@@ -1,0 +1,73 @@
+.home {
+  background-color: #58AA93;
+  height: 970px;
+  width: auto;
+}
+
+
+.navbar{
+  height: 3.4rem;
+  width: auto;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Poppins', sans-serif;
+}
+
+.navbar h1 {
+  padding-right: 100px;
+  color: #58AA93;
+}
+
+
+.infoUser {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+  font-weight: 500;
+}
+
+.sair {
+  font-weight: 500;
+  font-size: 16px;
+  padding-right: 1rem;
+}
+
+.section-assisted {
+  height: 850px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+.card-assisted {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin-top: 20px;
+  height: 50px;
+  width: 430px;
+}
+
+.name{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  padding-left: 40px;
+}
+
+.more {
+  font-family: 'Poppins', sans-serif;
+  font-size: 28px;
+  font-weight: 300;
+  padding-right: 10px;
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
+}

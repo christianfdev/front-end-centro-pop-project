@@ -11,12 +11,14 @@ import { Home }  from './pages/Home';
 import { Register } from './pages/Register';
 import { ListingAssisteds } from './pages/ListingAssisteds';
 import { RegisterEvolution } from './pages/RegisterEvolution';
-import { FindEvolution } from './pages/FindEvolution';
+import { Evolutions } from './pages/Evolutions';
+import { Assisted } from './pages/Assisted';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
+
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<Login />}/>
@@ -24,10 +26,9 @@ root.render(
       <Route path="register" element={<Register />}/>
       <Route path="assisteds" element={<ListingAssisteds />}/>
       <Route path="new-evolution" element={<RegisterEvolution />}/>
-      <Route path="evolution" element={<FindEvolution />}/>
-
+      <Route path="evolution" element={<Evolutions />}/>
+      <Route path="assisted" element={<Assisted/>}/>
     </Routes>
-    
   </BrowserRouter>
     
 );

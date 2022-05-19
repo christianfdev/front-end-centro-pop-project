@@ -2,11 +2,11 @@ import React from 'react';
 import './styles.css';
 
 
-export function FindEvolution(){
+export function Evolutions(){
 
   return (
     <div>
-      <p>Buscar Evolução</p>
+      <p>Minhas Evoluções</p>
     </div>
   )
 
