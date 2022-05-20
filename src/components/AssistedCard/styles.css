@@ -1,0 +1,27 @@
+.card-assisted {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin-top: 20px;
+  height: 50px;
+  width: 430px;
+}
+
+.name{
+  font-weight: 500;
+  padding-left: 40px;
+}
+
+
+.more {
+  font-size: 28px;
+  font-weight: 300;
+  padding-right: 10px;
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
+}

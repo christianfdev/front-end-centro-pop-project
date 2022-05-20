@@ -1,6 +1,7 @@
 import './styles.css';
 import { Button } from '../../components/Button';
 import { useNavigate } from 'react-router-dom';
+import { NavBar } from '../../components/NavBar';
 
 export function Home(){
 
@@ -8,28 +9,19 @@ export function Home(){
 
     return(
       <div className='home'>
-        <nav className='navbar'>
-          <div className='infoUser'>
-            <p>Christian</p>
-            <p>Orientador Social</p>
-          </div>
+        <NavBar page='Página Inicial'/>
 
-          <div className='sair'>
-            <p>Sair</p>
-          </div>
-        </nav>
-
-        <section className='options'>
+        <section className='home-options'>
           <div className='section'>
-            <span className='title'>Minha Atividade</span>
-            <div className='buttons'>
-              <Button text='Meus Cadastros'/>
+            <span className='section-title'>Minha Atividade</span>
+            <div className='home-buttons'>
+              <Button text='Meus Cadastros' onClick={ () => {navigate("/assisteds")}}/>
               <Button text='Minhas Evoluções'/>
             </div>
           </div>
           <div className='section'>
-            <span className='title'>Assistidos</span>
-            <div className='buttons'>
+            <span className='section-title'>Assistidos</span>
+            <div className='home-buttons'>
               <Button text='Novo Cadastro' onClick={ () => {navigate("/register")}}/>
               <Button text='Listar Assistidos' onClick={ () => {navigate("/assisteds")}}/>
               <Button text='Nova Evolução' onClick={ () => {navigate("/new-evolution")}}/>

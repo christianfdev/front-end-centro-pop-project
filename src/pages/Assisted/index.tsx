@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './styles.css';
 import { useNavigate } from 'react-router-dom';
+import { NavBar } from '../../components/NavBar';
 
 export function Assisted() {
 
@@ -30,40 +31,30 @@ export function Assisted() {
   let navigate = useNavigate();
   
   return(
-
     
-    <div className="register">
-    <nav className='navbar'>
-        <div className='infoUser'>
-          <p>Christian</p>
-          <p>Orientador Social</p>
+    <div className="assisted">
+      <NavBar page='Dados do Assistido'/>
+
+      <section className='sectionAssisted'>
+
+        <div className='containerAssisted'>
+
+          <h1 className='assistedTitle'>CARLOS AUGUSTO LOPES SPINDOLA</h1>
+
+          <div className='assistedData'>
+            <p><span>Nome:</span>  Carlos Augusto Lopes Spindola </p>
+            <p><span>Nome Social/ Apelido:</span>  Gastão </p>
+            <p><span>Mãe:</span>  Joana Lopes Spindola </p>
+            <p><span>Pai:</span>  José Lopes Spindola </p>
+            <p><span>Sexo:</span>  Masculino </p>
+            <p><span>Data de Nascimento:</span>  19/08/1979 </p>
+
+
+          </div>
+
+
         </div>
-        <h1>Dados do Assistido</h1>
-        <div className='sair'>
-          <p>Sair</p>
-        </div>
-    </nav>
-
-    <section className='sectionAssisted'>
-
-    <div className='containerAssisted'>
-
-      <h1 className='assistedTitle'>CARLOS AUGUSTO LOPES SPINDOLA</h1>
-
-      <div className='userData'>
-        <p><span>Nome:</span>  Carlos Augusto Lopes Spindola </p>
-        <p><span>Nome Social/ Apelido:</span>  Gastão </p>
-        <p><span>Mãe:</span>  Joana Lopes Spindola </p>
-        <p><span>Pai:</span>  José Lopes Spindola </p>
-        <p><span>Sexo:</span>  Masculino </p>
-        <p><span>Data de Nascimento:</span>  19/08/1979 </p>
-
-
-      </div>
-
-
-    </div>
-    </section>
+      </section>
     </div>
   )
 }

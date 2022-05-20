@@ -1,24 +1,8 @@
-
-.register{
+.assisted{
   min-height: 100vh;
   background-color: #58AA93;
 }
 
-.navbar{
-  height: 3.4rem;
-  width: auto;
-  background-color: #fff;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  font-family: 'Poppins', sans-serif;
-}
-
-.navbar h1 {
-  padding-right: 100px;
-  color: #58AA93;
-}
 
 .sectionAssisted {
   height: 850px;
@@ -44,7 +28,7 @@
   font-weight: 700;
 }
 
-.userData {
+.assistedData {
   padding-top: 20px;
 }
 

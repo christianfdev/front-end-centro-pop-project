@@ -1,26 +1,11 @@
 
-.register{
+.register-evolution{
   min-height: 100vh;
   background-color: #58AA93;
 }
 
-.navbar{
-  height: 3.4rem;
-  width: auto;
-  background-color: #fff;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  font-family: 'Poppins', sans-serif;
-}
 
-.navbar h1 {
-  padding-right: 100px;
-  color: #58AA93;
-}
-
-.sectionRegisterEvolution {
+.section-register-evolution {
   height: 850px;
   display: flex;
   justify-content: center;
@@ -28,7 +13,7 @@
 }
 
 
-.containerRegisterEvolution {
+.container-register-evolution {
   display: flex;
   flex-direction: column;
   background-color: #fff;
@@ -41,25 +26,26 @@
   font-family: 'Poppins', sans-serif;
 }
 
-.containerRegisterEvolution span {
+.container-register-evolution span {
   font-weight: 500;
   font-size: 14px;
   padding-top: 4px;
 }
 
-.label-evolution {
+.label-register-evolution {
   font-weight: 500;
   font-size: 14px;
+  color: #000;
 }
 
-.registerTitle {
+.register-evolution {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
   color: #ADCB5C;
   padding-bottom: 20px;
 }
 
-.form {
+.form-register-evolution {
   display: flex;
   flex-direction: column;
   text-align: left;

@@ -11,11 +11,11 @@ export function Login() {
 
     
         return (
-            <div className="Login">
+            <div className="login">
                 
-                <div className="container">
+                <div className="login-container">
                     <div className="image-div">
-                        <img src={logo} className="Login-logo" alt="logo" />
+                        <img src={logo} className="login-logo" alt="logo" />
                     </div>
 
                     <div className="login-form">
@@ -23,12 +23,12 @@ export function Login() {
                             Faça seu login
                         </h1> 
 
-                        <div className="inputs">
+                        <div className="login-inputs">
                             <InputText placeholder="Usuário"/>
                             <InputPassword />
                         </div>
 
-                        <div className="buttons">
+                        <div className="login-buttons">
                             <Button 
                                 onClick={ () => {navigate("/home")}}
                                 text="Entrar"

@@ -3,6 +3,7 @@ import './styles.css';
 import { Button } from '../../components/Button';
 import { useNavigate } from 'react-router-dom';
 import { FormOption } from '../../components/FormOption';
+import { NavBar } from '../../components/NavBar';
 
 export function Register() {
 
@@ -35,55 +36,46 @@ export function Register() {
 
     
     <div className="register">
-    <nav className='navbar'>
-        <div className='infoUser'>
-          <p>Christian</p>
-          <p>Orientador Social</p>
+    <NavBar page='Cadastro Socioassistencial'/>
+
+      <section className='sectionRegister'>
+
+        <div className='containerRegister'>
+          <h1 className='registerTitle'>Dados do Assistido</h1>
+          <form className='form-register'>
+
+            <FormOption text='Nome'/>
+            <FormOption text='Nome Social/ Apelido'/>
+            <span>Filiação</span> 
+            <FormOption text='Nome da Mãe'/>
+            <FormOption text='Nome do Pai'/>
+            <FormOption text='Sexo'/>
+            <FormOption text='Data de Nascimento'/>
+            <FormOption text='Nacionalidade'/>
+            <FormOption text='Número de Telefone/ Celular'/>
+            <FormOption text='Cidade em que reside'/>
+            <FormOption text='RG'/>
+            <FormOption text='Orgão expedidor'/>
+            <FormOption text='UF'/>
+            <FormOption text='Data de Expedição'/>
+            <FormOption text='CPF'/>
+            <FormOption text='Reservista'/>
+            <FormOption text='Carteira de Trabalho'/>
+            <FormOption text='Certidão de Nascimento'/>
+            <FormOption text='NIS'/>
+            <FormOption text='Recebe algum benefício? Se sim, quais?'/>
+            <FormOption text='Situação'/>
+            <FormOption text='Escolaridade'/>
+
+
+            <Button 
+              onClick={ () => {navigate("/home")}}
+              text="Cadastrar"
+            />
+
+          </form>
         </div>
-        <h1>Cadastro Socioassistencial</h1>
-        <div className='sair'>
-          <p>Sair</p>
-        </div>
-    </nav>
-
-    <section className='sectionRegister'>
-
-    <div className='containerRegister'>
-      <h1 className='registerTitle'>Dados do Assistido</h1>
-      <form className='form'>
-
-        <FormOption text='Nome'/>
-        <FormOption text='Nome Social/ Apelido'/>
-        <span>Filiação</span> 
-        <FormOption text='Nome da Mãe'/>
-        <FormOption text='Nome do Pai'/>
-        <FormOption text='Sexo'/>
-        <FormOption text='Data de Nascimento'/>
-        <FormOption text='Nacionalidade'/>
-        <FormOption text='Número de Telefone/ Celular'/>
-        <FormOption text='Cidade em que reside'/>
-        <FormOption text='RG'/>
-        <FormOption text='Orgão expedidor'/>
-        <FormOption text='UF'/>
-        <FormOption text='Data de Expedição'/>
-        <FormOption text='CPF'/>
-        <FormOption text='Reservista'/>
-        <FormOption text='Carteira de Trabalho'/>
-        <FormOption text='Certidão de Nascimento'/>
-        <FormOption text='NIS'/>
-        <FormOption text='Recebe algum benefício. Se sim, quais.'/>
-        <FormOption text='Situação'/>
-        <FormOption text='Escolaridade'/>
-
-
-        <Button 
-           onClick={ () => {navigate("/home")}}
-           text="Cadastrar"
-        />
-
-      </form>
-    </div>
-    </section>
+      </section>
     </div>
   )
 }

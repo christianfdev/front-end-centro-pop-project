@@ -1,23 +1,6 @@
-
 .register{
   height: 1500px;
   background-color: #58AA93;
-}
-
-.navbar{
-  height: 3.4rem;
-  width: auto;
-  background-color: #fff;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  font-family: 'Poppins', sans-serif;
-}
-
-.navbar h1 {
-  padding-right: 100px;
-  color: #58AA93;
 }
 
 .sectionRegister {
@@ -46,10 +29,6 @@
   padding-top: 4px;
 }
 
-.label {
-  font-weight: 300;
-  font-size: 14px;
-}
 
 .registerTitle {
   font-family: 'Poppins', sans-serif;
@@ -58,24 +37,9 @@
   padding-bottom: 20px;
 }
 
-.form {
+.form-register {
   display: flex;
   flex-direction: column;
   text-align: left;
-}
-
-.input-register {
-  height: 25px;
-  width: 350px;
-  border: 2px solid #ddd;
-  border-radius: 4px;
-  font-family: 'Poppins', sans-serif;
-  outline: 0;
-  transition: .2s;
-  margin-bottom: 10px;
-}
-
-.input-register:focus {
-  border-color: #0f7ef1;
 }
 
