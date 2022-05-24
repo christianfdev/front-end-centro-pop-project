@@ -4,6 +4,8 @@ import { Button } from '../../components/Button';
 import { useNavigate } from 'react-router-dom';
 import { FormOption } from '../../components/FormOption';
 import { NavBar } from '../../components/NavBar';
+import axios from 'axios';
+
 
 export function Register() {
 
@@ -31,6 +33,22 @@ export function Register() {
   const [relactory, setRelactory] = useState('');
 
   let navigate = useNavigate();
+
+  const api = axios.create({
+    baseURL: "http://localhost:3001",
+  });
+
+  async function handleNewAssisted(){
+    await api.post('/assisted', 
+    {
+      name: 'post',
+      situation: 'post',
+      relactory: 'post'
+    })
+    .catch((err) => {
+      console.error("ops! ocorreu um erro" + err);
+    });
+  }
   
   return(
 
@@ -69,7 +87,11 @@ export function Register() {
 
 
             <Button 
-              onClick={ () => {navigate("/home")}}
+              onClick={ () => 
+                {
+                  handleNewAssisted();
+                                  
+                }}
               text="Cadastrar"
             />
 
