@@ -1,14 +1,15 @@
-import { useState } from 'react';
 import './styles.css';
 import { useParams, useNavigate } from 'react-router-dom';
 import { NavBar } from '../../components/NavBar';
 import { AssistedInterface } from '../../repositories/AssistedInterface';
 import { useFetch } from '../../services/useFetch';
+import { Button } from '../../components/Button';
 
 
 export function Assisted() {
 
   let { id } = useParams();
+  let navigate = useNavigate();
   const { data: repo } = useFetch<AssistedInterface>(`http://localhost:3001/assisted/${id}`);
 
   return(
@@ -46,6 +47,14 @@ export function Assisted() {
               <p><span>Situação: </span> {repo?.situation} </p>
               <p><span>Escolaridade: </span>  {repo?.schooling} </p>
               <p className='relatorio'><span>Relatório: </span>  {repo?.relactory} </p>
+              <div className='assisted-buttons'>
+
+                <Button text='Nova Evolução' onClick={ () => {navigate(`/new-evolution/${id}`)}}/>
+                <Button text='Evoluções' onClick={ () => {navigate(`/evolution`)}}/>
+                <Button text='Atualizar Informações' onClick={ () => {navigate("/")}}/>
+                <Button text='Deletar Cadastro' onClick={ () => {navigate("/")}}/>
+
+              </div>
             </div>
             </>
           :

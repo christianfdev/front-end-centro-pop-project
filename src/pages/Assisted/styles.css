@@ -16,7 +16,7 @@
   border-radius: 20px;
   box-sizing: border-box;
   height: auto;
-  width: 850px;
+  width: auto;
   padding: 20px;
   font-family: 'Poppins', sans-serif;
 }
@@ -39,4 +39,12 @@
 
 .relatorio { 
   text-align: justify;
+}
+
+
+.assisted-buttons {
+  display: flex;
+  flex-direction: row;
+  padding-top: 50px;
+  gap: 10px;
 }
