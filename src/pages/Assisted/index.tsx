@@ -1,35 +1,16 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import './styles.css';
-import { useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { NavBar } from '../../components/NavBar';
+import { AssistedInterface } from '../../repositories/AssistedInterface';
+import { useFetch } from '../../services/useFetch';
+
 
 export function Assisted() {
 
-  const [name, setName] = useState('');
-  const [socialName, setSocialName] = useState('');
-  const [motherName, setMotherName] = useState('');
-  const [fatherName, setFatherNamer] = useState('');
-  const [sex, setSex] = useState('');
-  const [birthData, setBirthData] = useState('');
-  const [nationality, setNationality] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [cityResidence, setCityResidence] = useState('');
-  const [rg, setRg] = useState('');
-  const [orgE, setOrgE] = useState('');
-  const [uf, setUf] = useState('');
-  const [dtE, setDtE] = useState('');
-  const [cpf, setCpf] = useState('');
-  const [reservist, setReservist] = useState('');
-  const [workWallet, setWorkWallet] = useState('');
-  const [birthCert, setBirthCert] = useState('');
-  const [nis, setNis] = useState('');
-  const [benefits, setBenefits] = useState('');
-  const [situation, setSituation] = useState('');
-  const [schooling, setSchooling] = useState('');
-  const [relactory, setRelactory] = useState('');
+  let { id } = useParams();
+  const { data: repo } = useFetch<AssistedInterface>(`http://localhost:3001/assisted/${id}`);
 
-  let navigate = useNavigate();
-  
   return(
     
     <div className="assisted">
@@ -39,20 +20,37 @@ export function Assisted() {
 
         <div className='containerAssisted'>
 
-          <h1 className='assistedTitle'>CARLOS AUGUSTO LOPES SPINDOLA</h1>
-
-          <div className='assistedData'>
-            <p><span>Nome:</span>  Carlos Augusto Lopes Spindola </p>
-            <p><span>Nome Social/ Apelido:</span>  Gastão </p>
-            <p><span>Mãe:</span>  Joana Lopes Spindola </p>
-            <p><span>Pai:</span>  José Lopes Spindola </p>
-            <p><span>Sexo:</span>  Masculino </p>
-            <p><span>Data de Nascimento:</span>  19/08/1979 </p>
-
-
-          </div>
-
-
+          {repo ? 
+            <>
+            <h1 className='assistedTitle'>{repo?.name}</h1>
+            <div className='assistedData'>
+              <p><span>Nome:</span>  {repo?.name} </p>
+              <p><span>Nome Social/ Apelido:</span> {repo?.social_name} </p>
+              <p><span>Mãe:</span>  {repo?.mother_name} </p>
+              <p><span>Pai:</span>  {repo?.father_name} </p>
+              <p><span>Sexo:</span>  {repo?.sex} </p>
+              <p><span>Data de Nascimento:</span>  {repo?.birth_data} </p>
+              <p><span>Nacionalidade:</span>  {repo?.nationality} </p>
+              <p><span>Telefone/ Celular:</span> {repo?.phone_number} </p>
+              <p><span>Reside em: </span>  {repo?.city_residence} </p>
+              <p><span>RG: </span>  {repo?.rg} </p>
+              <p><span>Orgão Emissor: </span>  {repo?.org_e} </p>
+              <p><span>UF: </span>  {repo?.uf} </p>
+              <p><span>Data de Emissão: </span>  {repo?.dt_e} </p>
+              <p><span>CPF: </span> {repo?.cpf} </p>
+              <p><span>Reservista: </span>  {repo?.reservist} </p>
+              <p><span>Carteira de Trabalho: </span>  {repo?.work_wallet} </p>
+              <p><span>Certidão de Nascimento: </span>  {repo?.birth_cert} </p>
+              <p><span>NIS: </span>  {repo?.nis} </p>
+              <p><span>Benefícios: </span>  {repo?.benefits} </p>
+              <p><span>Situação: </span> {repo?.situation} </p>
+              <p><span>Escolaridade: </span>  {repo?.schooling} </p>
+              <p className='relatorio'><span>Relatório: </span>  {repo?.relactory} </p>
+            </div>
+            </>
+          :
+            <h1 className='assistedTitle'>{"Não existe"}</h1>
+          }
         </div>
       </section>
     </div>

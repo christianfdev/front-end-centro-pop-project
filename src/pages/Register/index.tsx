@@ -1,103 +1,110 @@
-import { useState } from 'react'
 import './styles.css';
-import { Button } from '../../components/Button';
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { api } from '../../services/api';
+import Swal from 'sweetalert2';
 import { FormOption } from '../../components/FormOption';
+import { Button } from '../../components/Button';
 import { NavBar } from '../../components/NavBar';
-import axios from 'axios';
+import { AssistedInterface } from '../../repositories/AssistedInterface';
+import { RelactoryTextArea } from '../../components/TextArea';
+
 
 
 export function Register() {
-
-  const [name, setName] = useState('');
-  const [socialName, setSocialName] = useState('');
-  const [motherName, setMotherName] = useState('');
-  const [fatherName, setFatherNamer] = useState('');
-  const [sex, setSex] = useState('');
-  const [birthData, setBirthData] = useState('');
-  const [nationality, setNationality] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [cityResidence, setCityResidence] = useState('');
-  const [rg, setRg] = useState('');
-  const [orgE, setOrgE] = useState('');
-  const [uf, setUf] = useState('');
-  const [dtE, setDtE] = useState('');
-  const [cpf, setCpf] = useState('');
-  const [reservist, setReservist] = useState('');
-  const [workWallet, setWorkWallet] = useState('');
-  const [birthCert, setBirthCert] = useState('');
-  const [nis, setNis] = useState('');
-  const [benefits, setBenefits] = useState('');
-  const [situation, setSituation] = useState('');
-  const [schooling, setSchooling] = useState('');
-  const [relactory, setRelactory] = useState('');
+  const [assisted, setAssisted] = useState<AssistedInterface>(
+    {
+      name: '',
+      situation: '',
+      relactory: ''
+    }
+  );
 
   let navigate = useNavigate();
+  
+  function handleChange (e: any){
+    const value = e.target.value;
+    setAssisted({
+      ...assisted,
+      [e.target.name]: value
+    });
+  };
+  
+  async function handleNewAssisted(e: any){
+    e.preventDefault();
+    await api.post('/assisted', assisted)
+    .then(response => {
+      
+     if(response.status){
+       Swal.fire({
+         icon: 'success',
+         text: 'Assisted created succesfully',
+         confirmButtonColor: '#58AA93',
 
-  const api = axios.create({
-    baseURL: "http://localhost:3001",
-  });
-
-  async function handleNewAssisted(){
-    await api.post('/assisted', 
-    {
-      name: 'post',
-      situation: 'post',
-      relactory: 'post'
+       }).then(() => {
+         navigate('/home')
+       })
+     } else {
+       Swal.fire({
+         icon: 'error',
+         text: response.data.error
+       })
+     }
     })
     .catch((err) => {
-      console.error("ops! ocorreu um erro" + err);
+      Swal.fire({
+        icon: 'error',
+        text: 'Ocorreu um erro durante a tentativa de realizar uma requisição: ' + err
+      })
+      console.error('Ocorreu um erro durante a tentativa de realizar uma requisição: ' + err);
     });
   }
   
   return(
 
-    
     <div className="register">
     <NavBar page='Cadastro Socioassistencial'/>
 
       <section className='sectionRegister'>
 
         <div className='containerRegister'>
+
           <h1 className='registerTitle'>Dados do Assistido</h1>
-          <form className='form-register'>
 
-            <FormOption text='Nome'/>
-            <FormOption text='Nome Social/ Apelido'/>
+          <form className='form-register' onSubmit={handleNewAssisted}>
+
+            <FormOption text='Nome' name="name" onChange={handleChange}/>
+            <FormOption text='Nome Social/ Apelido' name="social_name"onChange={handleChange}/>
             <span>Filiação</span> 
-            <FormOption text='Nome da Mãe'/>
-            <FormOption text='Nome do Pai'/>
-            <FormOption text='Sexo'/>
-            <FormOption text='Data de Nascimento'/>
-            <FormOption text='Nacionalidade'/>
-            <FormOption text='Número de Telefone/ Celular'/>
-            <FormOption text='Cidade em que reside'/>
-            <FormOption text='RG'/>
-            <FormOption text='Orgão expedidor'/>
-            <FormOption text='UF'/>
-            <FormOption text='Data de Expedição'/>
-            <FormOption text='CPF'/>
-            <FormOption text='Reservista'/>
-            <FormOption text='Carteira de Trabalho'/>
-            <FormOption text='Certidão de Nascimento'/>
-            <FormOption text='NIS'/>
-            <FormOption text='Recebe algum benefício? Se sim, quais?'/>
-            <FormOption text='Situação'/>
-            <FormOption text='Escolaridade'/>
-
-
-            <Button 
-              onClick={ () => 
-                {
-                  handleNewAssisted();
-                                  
-                }}
-              text="Cadastrar"
-            />
+            <FormOption text='Nome da Mãe' name="mother_name"onChange={handleChange}/>
+            <FormOption text='Nome do Pai' name="father_name" onChange={handleChange}/>
+            <FormOption text='Sexo' name="sex" onChange={handleChange}/>
+            <FormOption text='Data de Nascimento' name="birth_data" onChange={handleChange}/>
+            <FormOption text='Nacionalidade' name="nationality" onChange={handleChange}/>
+            <FormOption text='Número de Telefone/ Celular' name="phone_number"onChange={handleChange}/>
+            <FormOption text='Cidade em que reside' name="city_residence" onChange={handleChange}/>
+            <FormOption text='RG' name="rg" onChange={handleChange}/>
+            <FormOption text='Orgão expedidor' name="org_e" onChange={handleChange}/>
+            <FormOption text='UF' name="uf" onChange={handleChange}/>
+            <FormOption text='Data de Expedição' name="dt_e" onChange={handleChange}/>
+            <FormOption text='CPF' name="cpf" onChange={handleChange}/>
+            <FormOption text='Reservista' name="reservist" onChange={handleChange}/>
+            <FormOption text='Carteira de Trabalho' name="work_wallet" onChange={handleChange}/>
+            <FormOption text='Certidão de Nascimento' name="birth_cert" onChange={handleChange}/>
+            <FormOption text='NIS' name="nis" onChange={handleChange}/>
+            <FormOption text='Recebe algum benefício? Se sim, quais?' name="benefits" onChange={handleChange}/>
+            <FormOption text='Situação' name="situation" onChange={handleChange}/>
+            <FormOption text='Escolaridade' name="schooling" onChange={handleChange}/>
+            <RelactoryTextArea text='Relatório'  name="relactory"  onChange={handleChange}/>
+            <Button text={"Cadastrar Assistido"}/>
 
           </form>
+
         </div>
+
       </section>
+
     </div>
+
   )
 }

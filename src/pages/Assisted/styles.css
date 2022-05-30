@@ -1,16 +1,13 @@
 .assisted{
-  min-height: 100vh;
   background-color: #58AA93;
 }
 
-
 .sectionAssisted {
-  height: 850px;
+  min-height: 850px;
   display: flex;
   justify-content: center;
-  padding-top: 20px;
+  padding: 20px 0 20px 0;
 }
-
 
 .containerAssisted {
   display: flex;
@@ -18,7 +15,7 @@
   background-color: #fff;
   border-radius: 20px;
   box-sizing: border-box;
-  height: 500px;
+  height: auto;
   width: 850px;
   padding: 20px;
   font-family: 'Poppins', sans-serif;
@@ -32,12 +29,6 @@
   padding-top: 20px;
 }
 
-.label {
-  font-weight: 300;
-  font-size: 14px;
-}
-
-
 .assistedTitle {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
@@ -46,24 +37,6 @@
   text-align: center;
 }
 
-.form {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
+.relatorio { 
+  text-align: justify;
 }
-
-.input-register {
-  height: 25px;
-  width: 350px;
-  border: 2px solid #ddd;
-  border-radius: 4px;
-  font-family: 'Poppins', sans-serif;
-  outline: 0;
-  transition: .2s;
-  margin-bottom: 10px;
-}
-
-.input-register:focus {
-  border-color: #0f7ef1;
-}
-

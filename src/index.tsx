@@ -27,7 +27,7 @@ root.render(
       <Route path="assisteds" element={<ListingAssisteds />}/>
       <Route path="new-evolution" element={<RegisterEvolution />}/>
       <Route path="evolution" element={<Evolutions />}/>
-      <Route path="assisted" element={<Assisted/>}/>
+      <Route path="assisted/:id" element={<Assisted/>}/>
     </Routes>
   </BrowserRouter>
     

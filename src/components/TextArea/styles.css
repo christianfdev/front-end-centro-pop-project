@@ -14,3 +14,43 @@
 .textarea:focus {
   border-color: #0f7ef1;
 }
+
+.label {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  color: #000;
+}
+
+.container-textarea-register {
+  display:flex;
+  flex-direction: column;
+}
+.input-text-area {
+  height: 25px;
+  width: 350px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  font-family: 'Poppins', sans-serif;
+  outline: 0;
+  transition: .2s;
+  margin-bottom: 10px;
+}
+
+.input-text-area:focus {
+  border-color: #0f7ef1;
+}
+
+.textarea-register {
+  height: 150px;
+  width: 350px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  font-family: 'Poppins', sans-serif;
+  outline: 0;
+  transition: .2s;
+  resize: none;
+  margin-bottom: 10px;
+ 
+}
+

@@ -2,15 +2,12 @@ import './styles.css';
 import { AssistedCard } from '../../components/AssistedCard';
 import { NavBar } from '../../components/NavBar';
 import { useFetch } from '../../services/useFetch';
+import { AssistedInterface } from '../../repositories/AssistedInterface';
 
-
-type Repository = {
-  name: string;
-}
 
 export function ListingAssisteds () {
 
-  const { data: repositories } = useFetch<Repository[]>('http://localhost:3001/assisted')
+  const { data: repositories } = useFetch<AssistedInterface[]>('http://localhost:3001/assisted')
 
 
   return(
@@ -21,13 +18,11 @@ export function ListingAssisteds () {
         {
           repositories?.map(repo => {
             return (
-              <AssistedCard key={repo.name} name={repo.name} />
+              <AssistedCard key={repo.id} name={repo.name} id={repo.id} />
             )
           })
         }
       </section>
-
-      
     </div>
   )
 

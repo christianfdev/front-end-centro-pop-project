@@ -1,5 +1,5 @@
 .register{
-  height: 1500px;
+  min-height: 1500px;
   background-color: #58AA93;
 }
 
@@ -17,7 +17,7 @@
   align-items: center;
   border-radius: 20px;
   box-sizing: border-box;
-  height: 1415px;
+  height: auto;
   width: 850px;
   padding: 20px;
   font-family: 'Poppins', sans-serif;
