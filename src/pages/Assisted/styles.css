@@ -1,9 +1,10 @@
 .assisted{
   background-color: #58AA93;
+  min-height: 970px;
 }
 
 .sectionAssisted {
-  min-height: 850px;
+  height: auto;
   display: flex;
   justify-content: center;
   padding: 20px 0 20px 0;
@@ -15,8 +16,6 @@
   background-color: #fff;
   border-radius: 20px;
   box-sizing: border-box;
-  height: auto;
-  width: auto;
   padding: 20px;
   font-family: 'Poppins', sans-serif;
 }

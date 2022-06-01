@@ -45,7 +45,7 @@ export function Assisted() {
       }else if(result.isDenied){
         
         Swal.fire({
-          title: 'Cagão!',
+          title: 'Assistido excluído!',
           customClass: {
             title: 'title'
           },
