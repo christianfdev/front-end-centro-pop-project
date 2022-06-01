@@ -24,9 +24,10 @@ root.render(
       <Route path="/" element={<Login />}/>
       <Route path="home" element={<Home />}/>
       <Route path="register" element={<Register />}/>
+      <Route path="register/:id" element={<Register />}/>
       <Route path="assisteds" element={<ListingAssisteds />}/>
       <Route path="new-evolution/:id" element={<RegisterEvolution />}/>
-      <Route path="evolution" element={<Evolutions />}/>
+      <Route path="evolution/:assistedId" element={<Evolutions />}/>
       <Route path="assisted/:id" element={<Assisted/>}/>
     </Routes>
   </BrowserRouter>

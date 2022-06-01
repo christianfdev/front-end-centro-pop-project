@@ -1,0 +1,23 @@
+.card-evolution {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin-top: 20px;
+  min-height: 150px;
+  min-width: 430px;
+  padding: 10px;
+}
+
+.card-evolution p {
+  font-weight: 500;
+}
+
+.buttons-evolution {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}

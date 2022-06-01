@@ -4,6 +4,8 @@ import { NavBar } from '../../components/NavBar';
 import { AssistedInterface } from '../../repositories/AssistedInterface';
 import { useFetch } from '../../services/useFetch';
 import { Button } from '../../components/Button';
+import { api } from '../../services/api';
+import  Swal  from 'sweetalert2';
 
 
 export function Assisted() {
@@ -11,6 +13,50 @@ export function Assisted() {
   let { id } = useParams();
   let navigate = useNavigate();
   const { data: repo } = useFetch<AssistedInterface>(`http://localhost:3001/assisted/${id}`);
+
+
+  async function handleDeleteAssisted(assistedId: string){
+    Swal.fire({
+      title: 'Você tem certeza que deseja deletar os dados desse assistido?',
+      showDenyButton: true,
+      confirmButtonText: 'Sim, deletar',
+      denyButtonText: 'Não, cancelar',
+      customClass: {
+        actions: 'my-actions',
+        confirmButton: 'confirm',
+        denyButton: 'order-3',
+        title: 'title'
+      }
+    }).then(async (result) => {
+      if(result.isConfirmed){
+        await api.delete(assistedId)
+        .then(() => {
+          Swal.fire({
+            title: 'Dados deletados com sucesso!',
+            icon: 'success',
+            customClass: {
+              title: 'title'
+            },
+            confirmButtonColor: '#58AA93'
+          })
+
+          navigate('/home');
+        })
+      }else if(result.isDenied){
+        
+        Swal.fire({
+          title: 'Cagão!',
+          customClass: {
+            title: 'title'
+          },
+          confirmButtonColor: '#58AA93'
+        })
+      }
+    })
+    
+
+   /*   */
+  }
 
   return(
     
@@ -50,9 +96,9 @@ export function Assisted() {
               <div className='assisted-buttons'>
 
                 <Button text='Nova Evolução' onClick={ () => {navigate(`/new-evolution/${id}`)}}/>
-                <Button text='Evoluções' onClick={ () => {navigate(`/evolution`)}}/>
-                <Button text='Atualizar Informações' onClick={ () => {navigate("/")}}/>
-                <Button text='Deletar Cadastro' onClick={ () => {navigate("/")}}/>
+                <Button text='Evoluções' onClick={ () => {navigate(`/evolution/${id}`)}}/>
+                <Button text='Atualizar Informações' onClick={ () => {navigate(`/register/${id}`)}}/>
+                <Button text='Deletar Cadastro' onClick={() => handleDeleteAssisted(`/assisted/${id}`)}/>
 
               </div>
             </div>

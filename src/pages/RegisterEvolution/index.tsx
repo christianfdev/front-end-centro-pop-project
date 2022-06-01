@@ -15,7 +15,7 @@ import { EvolutionInterface } from '../../repositories/EvolutionInterface';
 export function RegisterEvolution(){
 
   let navigate = useNavigate();
-  let { assistedId } = useParams();
+  let { id: assistedId } = useParams();
 
   
   const [evolution, setEvolution] = useState<EvolutionInterface>({
@@ -38,9 +38,7 @@ export function RegisterEvolution(){
   async function handleNewEvolution(e: any){
     e.preventDefault();
     await api.post(`/evolution`, evolution)
-    .then(response => {
-      console.log(response.data)
-      
+    .then(response => {     
      if(response.status){
        Swal.fire({
          icon: 'success',

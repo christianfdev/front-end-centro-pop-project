@@ -43,3 +43,8 @@
   text-align: left;
 }
 
+.confirmRegisterTitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px!important;
+  font-weight: 300!important;
+}

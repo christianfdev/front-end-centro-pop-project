@@ -48,3 +48,19 @@
   padding-top: 50px;
   gap: 10px;
 }
+
+
+.order-1 { order: 1; }
+.confirm { order: 2; background-color: #58AA93!important; font-family: 'Poppins', sans-serif;}
+.order-3 { order: 3; background-color: #a82a43!important; font-family: 'Poppins', sans-serif;}
+
+.right-gap {
+  margin-right: auto;
+}
+
+.title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px!important;
+  font-weight: 300!important;
+  margin-bottom: 10px;
+}

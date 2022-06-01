@@ -4,4 +4,4 @@ export type EvolutionInterface = {
     description: string;
     assistedId?: number;
     functionaryId?: number;
-  }
+}
