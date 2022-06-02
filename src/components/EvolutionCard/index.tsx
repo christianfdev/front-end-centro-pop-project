@@ -4,7 +4,7 @@ import { Button } from '../Button';
 
 
 
-export function EvolutionCard({ data, description, id, del } : any){
+export function EvolutionCard({ data, description, id, del, assisted } : any){
 
   let navigate = useNavigate();
 
@@ -14,7 +14,7 @@ export function EvolutionCard({ data, description, id, del } : any){
       <p className='data-card-evolution'><span>Data: </span>{data}</p>
       <p className='description-card-evolution'><span>Descrição: </span>{description}</p>
       <div className='buttons-evolution'>
-        <Button text='Atualizar' onClick={() => navigate(`/new-evolution/${id}`)}/>
+        <Button text='Atualizar' onClick={() => navigate(`/new-evolution/${assisted}/${id}`)}/>
         <Button text='Deletar' onClick={del}  />
       </div>
       

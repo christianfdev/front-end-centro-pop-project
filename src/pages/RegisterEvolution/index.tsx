@@ -15,7 +15,7 @@ import { EvolutionInterface } from '../../repositories/EvolutionInterface';
 export function RegisterEvolution(){
 
   let navigate = useNavigate();
-  let { id: assistedId } = useParams();
+  let { id: assistedId, evolutionId } = useParams();
 
   
   const [evolution, setEvolution] = useState<EvolutionInterface>({
@@ -64,6 +64,35 @@ export function RegisterEvolution(){
     });
   }
 
+  async function handleUpdateEvolution(e: any){
+    e.preventDefault();
+    await api.patch(`/evolution/${evolutionId}`, evolution)
+    .then(response => {     
+     if(response.status){
+       Swal.fire({
+         icon: 'success',
+         text: 'Assisted update succesfully',
+         confirmButtonColor: '#58AA93',
+
+       }).then(() => {
+         navigate(`/evolution/${assistedId}`)
+       })
+     } else {
+       Swal.fire({
+         icon: 'error',
+         text: response.data.error
+       })
+     }
+    })
+    .catch((err) => {
+      Swal.fire({
+        icon: 'error',
+        text: 'Ocorreu um erro durante a tentativa de realizar uma requisição: ' + err
+      })
+      console.error('Ocorreu um erro durante a tentativa de realizar uma requisição: ' + err);
+    });
+  }
+
 
   return(
 
@@ -76,7 +105,7 @@ export function RegisterEvolution(){
       <h1 className='register-evolution-title'>
         Informações de Registro
       </h1>
-      <form className='form-register-evolution' onSubmit={handleNewEvolution}>
+      <form className='form-register-evolution' >
         <FormOption 
           labelClass='bold' 
           text='Data'
@@ -90,9 +119,19 @@ export function RegisterEvolution(){
 
         <RelactoryTextArea name='description' onChange={handleChange}/>
 
-        <Button 
+        {
+          evolutionId ? 
+          <Button 
+           text="Atualizar Evolução"
+           onClick={handleUpdateEvolution}
+          />
+          :
+          <Button 
            text="Cadastrar Evolução"
-        />
+           onClick={handleNewEvolution}
+          />
+        }
+        
 
       </form>
     </div>

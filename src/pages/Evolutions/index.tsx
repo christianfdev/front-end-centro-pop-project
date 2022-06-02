@@ -70,7 +70,7 @@ export function Evolutions () {
         <h1>Carlos Augusto Lopes Spindola</h1>
 
         {repositories?.map(repo => {
-          return (<EvolutionCard  key={repo.id} data={repo.data} description={repo.description} del={() => handleDeleteEvolution(String(repo.id))}/>)
+          return (<EvolutionCard  key={repo.id} data={repo.data} description={repo.description} assisted={assistedId} id={repo.id} del={() => handleDeleteEvolution(String(repo.id))}/>)
         })
 
         }
