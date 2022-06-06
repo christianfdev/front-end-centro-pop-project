@@ -1,6 +1,10 @@
 import './styles.css';
+import { useNavigate } from 'react-router-dom'
 
 export function NavBar({ page } : any){
+
+  let navigate = useNavigate();
+
 
   return(
     <nav className='navbar'>
@@ -10,7 +14,7 @@ export function NavBar({ page } : any){
     </div>
     <h1>{page}</h1>
     <div className='sair'>
-      <p>Sair</p>
+      <p><a href="/" className='sair'>Sair</a></p>
     </div>
   </nav>
   )

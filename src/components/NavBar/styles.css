@@ -15,6 +15,11 @@
 }
 
 
+.sair{
+  text-decoration: none;
+  color: #000;
+}
+
 .infoUser {
   display: flex;
   flex-direction: column;

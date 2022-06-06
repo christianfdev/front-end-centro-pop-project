@@ -6,6 +6,7 @@ import { NavBar } from '../../components/NavBar';
 export function Home(){
 
   let navigate = useNavigate();
+  let functionaryId = 1;
 
     return(
       <div className='home'>
@@ -16,7 +17,7 @@ export function Home(){
             <span className='section-title'>Minha Atividade</span>
             <div className='home-buttons'>
               <Button text='Meus Cadastros' onClick={ () => {navigate("/assisteds")}}/>
-              <Button text='Minhas Evoluções'/>
+              <Button text='Minhas Evoluções' onClick={() => {navigate(`/evolution/functionary/${functionaryId}`)}}/>
             </div>
           </div>
           <div className='section'>
