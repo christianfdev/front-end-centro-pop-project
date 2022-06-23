@@ -54,3 +54,9 @@
     padding: 12px;
   }
   
+
+  .confirmLoginTitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px!important;
+    font-weight: 300!important;
+  }
