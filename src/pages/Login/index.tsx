@@ -38,7 +38,6 @@ export function Login() {
         e.preventDefault();
         await api.post('/login', data)
         .then(response => {
-          console.log(response.data.access_token)
             if(response.status){
               Swal.fire({
                 icon: 'success',
