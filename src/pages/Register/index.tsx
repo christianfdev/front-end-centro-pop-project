@@ -13,7 +13,7 @@ import { RelactoryTextArea } from '../../components/TextArea';
 
 export function Register() {
   let { id } = useParams();
-
+  let navigate = useNavigate();
   const [assisted, setAssisted] = useState<AssistedInterface>(
     {
       name: '',
@@ -21,9 +21,9 @@ export function Register() {
       relactory: ''
     }
   );
-
-  let navigate = useNavigate();
+  const token = localStorage.getItem('access_token')
   
+
   function handleChange (e: any){
     const value = e.target.value;
     setAssisted({
@@ -34,7 +34,11 @@ export function Register() {
   
   async function handleNewAssisted(e: any){
     e.preventDefault();
-    await api.post('/assisted', assisted)
+    await api.post('/assisted', assisted, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
     .then(response => {
       
      if(response.status){
@@ -67,7 +71,11 @@ export function Register() {
 
   async function handleUpdateAssisted(e: any){
     e.preventDefault();
-    await api.patch(`/assisted/${id}`, assisted)
+    await api.patch(`/assisted/${id}`, assisted, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
     .then(response => {
       
       if(response.status){

@@ -16,8 +16,7 @@ export function RegisterEvolution(){
 
   let navigate = useNavigate();
   let { id: assistedId, evolutionId } = useParams();
-
-  
+  const token = localStorage.getItem('access_token')  
   const [evolution, setEvolution] = useState<EvolutionInterface>({
     data: '',
     description: '',
@@ -37,7 +36,11 @@ export function RegisterEvolution(){
   
   async function handleNewEvolution(e: any){
     e.preventDefault();
-    await api.post(`/evolution`, evolution)
+    await api.post(`/evolution`, evolution, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
     .then(response => {     
      if(response.status){
        Swal.fire({
@@ -66,7 +69,11 @@ export function RegisterEvolution(){
 
   async function handleUpdateEvolution(e: any){
     e.preventDefault();
-    await api.patch(`/evolution/${evolutionId}`, evolution)
+    await api.patch(`/evolution/${evolutionId}`, evolution, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      }
+    })
     .then(response => {     
      if(response.status){
        Swal.fire({

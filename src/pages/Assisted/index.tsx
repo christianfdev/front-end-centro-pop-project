@@ -2,17 +2,33 @@ import './styles.css';
 import { useParams, useNavigate } from 'react-router-dom';
 import { NavBar } from '../../components/NavBar';
 import { AssistedInterface } from '../../repositories/AssistedInterface';
-import { useFetch } from '../../services/useFetch';
 import { Button } from '../../components/Button';
 import { api } from '../../services/api';
 import  Swal  from 'sweetalert2';
+import { useEffect, useState } from 'react';
 
 
 export function Assisted() {
 
   let { id } = useParams();
   let navigate = useNavigate();
-  const { data: repo } = useFetch<AssistedInterface>(`http://localhost:3001/assisted/${id}`);
+
+  const token = localStorage.getItem('access_token')
+  const [repo, setRepo] = useState<AssistedInterface | null>(null);
+
+  useEffect(() => {
+    if(token){
+      api.get(`http://localhost:3001/assisted/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
+        .then(response => {
+          setRepo(response.data)
+        })
+    }
+  }, [])
+
 
 
   async function handleDeleteAssisted(assistedId: string){
@@ -29,7 +45,11 @@ export function Assisted() {
       }
     }).then(async (result) => {
       if(result.isConfirmed){
-        await api.delete(assistedId)
+        await api.delete(assistedId, {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        })
         .then(() => {
           Swal.fire({
             title: 'Dados deletados com sucesso!',

@@ -6,6 +6,9 @@ import { NavBar } from '../../components/NavBar';
 export function Home(){
 
   let navigate = useNavigate();
+  
+  // Desenvolver a questão de pegar o id do funcionário
+  // Atualmente está com id manualmente setado para realização de testes
   let functionaryId = 1;
 
     return(

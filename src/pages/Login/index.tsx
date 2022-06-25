@@ -36,10 +36,9 @@ export function Login() {
     async function handleLogin(e: any){
 
         e.preventDefault();
-        console.log(data)
         await api.post('/login', data)
         .then(response => {
-      
+          console.log(response.data.access_token)
             if(response.status){
               Swal.fire({
                 icon: 'success',
@@ -50,6 +49,7 @@ export function Login() {
                 }
        
               }).then(() => {
+                localStorage.setItem('access_token', response.data.access_token);
                 navigate('/home')
               })
             } else {

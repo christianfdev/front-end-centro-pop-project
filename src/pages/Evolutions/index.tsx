@@ -9,18 +9,28 @@ import Swal from 'sweetalert2';
 import { useEffect, useState } from 'react';
 
 export function Evolutions () {
+
   let navigate = useNavigate();
+  const token = localStorage.getItem('access_token')
   const [data, setData] = useState<EvolutionInterface[] | null>(null);
   let { assistedId, functionaryId } = useParams();
 
   useEffect(() => {
     if(assistedId){
-      api.get(`/evolution/assisted/${assistedId}`)
+      api.get(`/evolution/assisted/${assistedId}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        }
+      })
       .then(response => {
         setData(response.data)
       })
     }else if(functionaryId){
-      api.get(`/evolution/functionary/${functionaryId}`)
+      api.get(`/evolution/functionary/${functionaryId}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        }
+      })
       .then(response => {
         setData(response.data)
       })
@@ -42,7 +52,11 @@ export function Evolutions () {
       }
     }).then(async (result) => {
       if(result.isConfirmed){
-        await api.delete(`/evolution/${id}`)
+        await api.delete(`/evolution/${id}`, {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        })
         .then(() => {
           Swal.fire({
             title: 'Dados deletados com sucesso!',
@@ -81,7 +95,16 @@ export function Evolutions () {
         <h1>Carlos Augusto Lopes Spindola</h1>
 
         {data?.map(repo => {
-          return (<EvolutionCard  key={repo.id} data={repo.data} description={repo.description} assisted={assistedId} id={repo.id} del={() => handleDeleteEvolution(String(repo.id))}/>)
+          return (
+            <EvolutionCard  
+              key={repo.id} 
+              data={repo.data} 
+              description={repo.description} 
+              assisted={assistedId} 
+              id={repo.id} 
+              del={() => handleDeleteEvolution(String(repo.id))}
+            />
+          )
         })
 
         }
