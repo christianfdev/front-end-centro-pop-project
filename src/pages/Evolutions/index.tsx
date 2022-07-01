@@ -13,7 +13,7 @@ export function Evolutions () {
   let navigate = useNavigate();
   const token = localStorage.getItem('access_token')
   const [data, setData] = useState<EvolutionInterface[] | null>(null);
-  let { assistedId, functionaryId } = useParams();
+  let { assistedId, userId } = useParams();
 
   useEffect(() => {
     if(assistedId){
@@ -25,8 +25,8 @@ export function Evolutions () {
       .then(response => {
         setData(response.data)
       })
-    }else if(functionaryId){
-      api.get(`/evolution/functionary/${functionaryId}`, {
+    }else if(userId){
+      api.get(`/evolution/user/${userId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         }

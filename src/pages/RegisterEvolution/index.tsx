@@ -21,7 +21,7 @@ export function RegisterEvolution(){
     data: '',
     description: '',
     assistedId: Number(assistedId),
-    functionaryId: 1     // CODAR A PARTE DE RECEBER O ID DO FUNCIONÁRIO PARA REALIZAR O REGISTRO DE UMA NOVA EVOLUÇÃO !!!!!!!!!!
+    userId: 1     // CODAR A PARTE DE RECEBER O ID DO FUNCIONÁRIO PARA REALIZAR O REGISTRO DE UMA NOVA EVOLUÇÃO !!!!!!!!!!
   });
 
 

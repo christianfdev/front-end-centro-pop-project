@@ -47,8 +47,17 @@ export function Login() {
                   title: 'confirmLoginTitle'
                 }
        
-              }).then(() => {
+              }).then(async () => {
                 localStorage.setItem('access_token', response.data.access_token);
+                await api.get('http://localhost:3001/me', {
+                    headers: {
+                      Authorization: `Bearer ${response.data.access_token}`,
+                    }
+                  })
+                  .then(response => {
+                    localStorage.setItem('assignment', response.data.assignment);
+                    }
+                  )
                 navigate('/home')
               })
             } else {

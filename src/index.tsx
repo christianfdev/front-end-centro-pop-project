@@ -29,7 +29,7 @@ root.render(
       <Route path="new-evolution/:id" element={<RegisterEvolution />}/>
       <Route path="new-evolution/:id/:evolutionId" element={<RegisterEvolution />}/>
       <Route path="evolution/:assistedId" element={<Evolutions />}/>
-      <Route path="evolution/functionary/:functionaryId" element={<Evolutions />}/>
+      <Route path="evolution/user/:userId" element={<Evolutions />}/>
       <Route path="assisted/:id" element={<Assisted/>}/>
     </Routes>
   </BrowserRouter>
