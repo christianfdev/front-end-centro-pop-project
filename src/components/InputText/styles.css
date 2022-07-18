@@ -1,11 +1,7 @@
 .input {
   height: 46px;
   padding: 0 16px;
-<<<<<<< HEAD
-  border: 2px solid #ddd;
-=======
   border: 2px solid #000;
->>>>>>> v01
   border-radius: 4px;
   font-family: 'Poppins', sans-serif;
   outline: 0;
@@ -15,9 +11,5 @@
 }
 
 .input:focus {
-<<<<<<< HEAD
-  border-color: #0f7ef1;
-=======
   border-color: #333;
->>>>>>> v01
 }
