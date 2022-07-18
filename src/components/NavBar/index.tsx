@@ -1,0 +1,22 @@
+import './styles.css';
+import { useNavigate } from 'react-router-dom'
+
+export function NavBar({ page } : any){
+
+  let navigate = useNavigate();
+
+
+  return(
+    <nav className='navbar'>
+    <div className='infoUser'>
+      <p>Christian</p>
+      <p>Orientador Social</p>
+    </div>
+    <h1>{page}</h1>
+    <div className='sair'>
+      <p><a href="/" className='sair'>Sair</a></p>
+    </div>
+  </nav>
+  )
+
+}

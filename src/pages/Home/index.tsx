@@ -1,41 +1,55 @@
 import './styles.css';
 import { Button } from '../../components/Button';
 import { useNavigate } from 'react-router-dom';
+import { NavBar } from '../../components/NavBar';
 
 export function Home(){
-
   let navigate = useNavigate();
+  let userId = 1;
+  let assignment = localStorage.getItem('assignment');
+
 
     return(
+
       <div className='home'>
-        <nav className='navbar'>
-          <div className='infoUser'>
-            <p>Christian</p>
-            <p>Orientador Social</p>
-          </div>
+        <NavBar page='Página Inicial'/>
 
-          <div className='sair'>
-            <p>Sair</p>
-          </div>
-        </nav>
+        <section className='home-options'>
+         
+            
+        {
+          assignment === 'ADMIN' ? 
+          <>
+            <div className='section'>
+              <span className='section-title'>Usuários</span>
+              <div className='home-buttons'>
+                <Button text='Cadastrar Usuário' onClick={() => {navigate("/assisteds")}}/>
+                <Button text='Listar Usuários' onClick={() => {navigate(`/evolution/user/${userId}`)}}/>
+              </div>
+            </div>
+          </>
+          : assignment === 'ORIENTADOR' ?  
+          <>
+            <div className='section'>
+              <span className='section-title'>Minha Atividade</span>
+              <div className='home-buttons'>
+                <Button text='Meus Cadastros' onClick={() => {navigate("/assisteds")}}/>
+                <Button text='Minhas Evoluções' onClick={() => {navigate(`/evolution/user/${userId}`)}}/>
+              </div>
+            </div>
+            <div className='section'>
+              <span className='section-title'>Assistidos</span>
+              <div className='home-buttons'>
+                <Button text='Novo Cadastro' onClick={() => {navigate("/register")}}/>
+                <Button text='Listar Assistidos' onClick={() => {navigate("/assisteds")}}/>
+              </div>
+            </div>
+          </>
+          :
+          <h1>FAILURE!</h1>
+          
+        }
 
-        <section className='options'>
-          <div className='section'>
-            <span className='title'>Minha Atividade</span>
-            <div className='buttons'>
-              <Button text='Meus Cadastros'/>
-              <Button text='Minhas Evoluções'/>
-            </div>
-          </div>
-          <div className='section'>
-            <span className='title'>Assistidos</span>
-            <div className='buttons'>
-              <Button text='Novo Cadastro' onClick={ () => {navigate("/register")}}/>
-              <Button text='Listar Assistidos'/>
-              <Button text='Nova Evolução'/>
-              <Button text='Pesquisar Evolução'/>
-            </div>
-          </div>
         </section>
       </div>
     )

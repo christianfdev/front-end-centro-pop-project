@@ -1,0 +1,25 @@
+.form-label {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  color: #000;
+}
+
+.form-input {
+  height: 25px;
+  width: 350px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  font-family: 'Poppins', sans-serif;
+  outline: 0;
+  transition: .2s;
+  margin-bottom: 10px;
+}
+
+.form-input:focus {
+  border-color: #0f7ef1;
+}
+
+.bold {
+  font-weight: 500;
+}

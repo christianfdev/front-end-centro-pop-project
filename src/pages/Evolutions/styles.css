@@ -1,0 +1,20 @@
+.evolutions {
+  background-color: #58AA93;
+  min-height: 970px;
+  height: auto;
+  width: auto;
+}
+
+.section-evolutions {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+h1 {
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  padding-top: 10px;
+}

@@ -1,12 +1,13 @@
-
 .register{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  min-height: 1500px;
   background-color: #58AA93;
 }
 
+.sectionRegister {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
 
 
 .containerRegister {
@@ -16,7 +17,7 @@
   align-items: center;
   border-radius: 20px;
   box-sizing: border-box;
-  height: 500px;
+  height: auto;
   width: 850px;
   padding: 20px;
   font-family: 'Poppins', sans-serif;
@@ -28,35 +29,22 @@
   padding-top: 4px;
 }
 
-.label {
-  font-weight: 300;
-  font-size: 14px;
-}
 
 .registerTitle {
+  font-family: 'Poppins', sans-serif;
   font-weight: 700;
   color: #ADCB5C;
   padding-bottom: 20px;
 }
 
-.form {
+.form-register {
   display: flex;
   flex-direction: column;
   text-align: left;
 }
 
-.input-register {
-  height: 25px;
-  width: 350px;
-  border: 2px solid #ddd;
-  border-radius: 4px;
+.confirmRegisterTitle {
   font-family: 'Poppins', sans-serif;
-  outline: 0;
-  transition: .2s;
-  margin-bottom: 10px;
+  font-size: 18px!important;
+  font-weight: 300!important;
 }
-
-.input-register:focus {
-  border-color: #0f7ef1;
-}
-

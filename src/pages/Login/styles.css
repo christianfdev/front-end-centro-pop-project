@@ -1,4 +1,4 @@
-.Login {
+.login {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -6,7 +6,7 @@
     background-color: #58AA93;
   }
   
-  .Login-logo {
+  .login-logo {
     height: 30vmin;
     pointer-events: none;
   }
@@ -30,7 +30,7 @@
 
   
 
-  .container {
+  .login-container {
     background-color: #fff;
     display: flex;
     flex-direction: row;
@@ -45,12 +45,18 @@
     gap: 50px;
   }  
 
-  .inputs {
+  .login-inputs {
     display: flex;
     flex-direction: column;
   }
 
-  .buttons {
+  .login-buttons {
     padding: 12px;
   }
   
+
+  .confirmLoginTitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px!important;
+    font-weight: 300!important;
+  }

@@ -1,0 +1,54 @@
+
+.register-evolution{
+  min-height: 100vh;
+  background-color: #58AA93;
+}
+
+
+.section-register-evolution {
+  height: 850px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.container-register-evolution {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  align-items: center;
+  border-radius: 20px;
+  box-sizing: border-box;
+  height: 500px;
+  width: 850px;
+  padding-top: 40px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container-register-evolution span {
+  font-weight: 500;
+  font-size: 14px;
+  padding-top: 4px;
+}
+
+.label-register-evolution {
+  font-weight: 500;
+  font-size: 14px;
+  color: #000;
+}
+
+.register-evolution-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: #ADCB5C;
+  padding-bottom: 20px;
+}
+
+.form-register-evolution {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+
