@@ -13,6 +13,7 @@ import { ListingAssisteds } from './pages/ListingAssisteds';
 import { RegisterEvolution } from './pages/RegisterEvolution';
 import { Evolutions } from './pages/Evolutions';
 import { Assisted } from './pages/Assisted';
+import { RegisterUser } from './pages/RegisterUser';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -31,6 +32,7 @@ root.render(
       <Route path="evolution/:assistedId" element={<Evolutions />}/>
       <Route path="evolution/user/:userId" element={<Evolutions />}/>
       <Route path="assisted/:id" element={<Assisted/>}/>
+      <Route path="user" element={<RegisterUser/>}/>
     </Routes>
   </BrowserRouter>
     

@@ -1,0 +1,50 @@
+.register{
+  min-height: 1500px;
+  background-color: #58AA93;
+}
+
+.sectionRegister {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+
+.containerRegister {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  align-items: center;
+  border-radius: 20px;
+  box-sizing: border-box;
+  height: auto;
+  width: 850px;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.containerRegister span {
+  font-weight: 500;
+  font-size: 14px;
+  padding-top: 4px;
+}
+
+
+.registerTitle {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: #ADCB5C;
+  padding-bottom: 20px;
+}
+
+.form-register {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.confirmRegisterTitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px!important;
+  font-weight: 300!important;
+}

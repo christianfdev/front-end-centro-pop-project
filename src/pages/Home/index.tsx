@@ -23,7 +23,7 @@ export function Home(){
             <div className='section'>
               <span className='section-title'>Usuários</span>
               <div className='home-buttons'>
-                <Button text='Cadastrar Usuário' onClick={() => {navigate("/assisteds")}}/>
+                <Button text='Cadastrar Usuário' onClick={() => {navigate("/user")}}/>
                 <Button text='Listar Usuários' onClick={() => {navigate(`/evolution/user/${userId}`)}}/>
               </div>
             </div>
