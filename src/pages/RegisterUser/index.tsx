@@ -1,12 +1,11 @@
 import './styles.css';
 import { useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { api } from '../../services/api';
 import Swal from 'sweetalert2';
 import { FormOption } from '../../components/FormOption';
 import { Button } from '../../components/Button';
 import { NavBar } from '../../components/NavBar';
-import { RelactoryTextArea } from '../../components/TextArea';
 import { UserInterface } from '../../repositories/UserInterface';
 
 
@@ -24,6 +23,8 @@ export function RegisterUser() {
     }
   );
 
+  
+
   const token = localStorage.getItem('access_token')
   
 
@@ -35,8 +36,10 @@ export function RegisterUser() {
     });
   };
   
+  
   async function handleNewUser(e: any){
     e.preventDefault();
+    console.log(user)
     await api.post('/user', user, {
       headers: {
         Authorization: `Bearer ${token}`
@@ -47,7 +50,7 @@ export function RegisterUser() {
      if(response.status){
        Swal.fire({
          icon: 'success',
-         title: 'Assisted created succesfully',
+         title: 'User created succesfully',
          confirmButtonColor: '#58AA93',
          customClass: {
            title: 'confirmRegisterTitle'
@@ -64,6 +67,7 @@ export function RegisterUser() {
      }
     })
     .catch((err) => {
+      console.log(user)
       Swal.fire({
         icon: 'error',
         text: 'Ocorreu um erro durante a tentativa de realizar uma requisição: ' + err
@@ -121,13 +125,13 @@ export function RegisterUser() {
 
           <h1 className='registerTitle'>Dados do Assistido</h1>
 
-          <form className='form-register'>
+          <form className='form-register' id='formUser'>
 
-            <FormOption text='Username' name="username" onChange={handleChange}/>
-            <FormOption text='Senha' name="password"onChange={handleChange}/>
+            <FormOption text='Usuário' name="username" onChange={handleChange}/>
+            <FormOption text='Senha' name="password"  type="password" onChange={handleChange}/>
             <FormOption text='Nome' name="name"onChange={handleChange}/>
             <FormOption text='CPF' name="cpf" onChange={handleChange}/>
-            <FormOption text='Assignment' name="assignment" onChange={handleChange}/>
+            <FormOption text='Função' name="assignment" select={true} form='formUser'onChange={handleChange} />
             <Button text={"Cadastrar Assistido"} onClick={handleNewUser}/>
             
 
