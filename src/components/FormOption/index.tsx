@@ -1,9 +1,12 @@
 import './styles.css';
 
-export function FormOption({ labelClass, text, value, onChange, name, type="text", select=false, formId  }: any ){
+export function FormOption({ labelClass, text, value, onChange, name, type="text", select=false, selectType, formId  }: any ){
 
   let classLabel = 'form-label ' + labelClass;
-  let values = ['ADMINISTRADOR', 'ORIENTADOR', 'ASSISTENTE']
+  let values;
+
+  selectType === 'user' ? values = ['ADMINISTRADOR', 'ORIENTADOR', 'ASSISTENTE'] : values = ['ALIMENTAÇÃO', 'AUXÍLIO', 'CESTA BÁSICA',  'COBERTOR', 'MÁSCARA']
+  
 
   return(
     <>

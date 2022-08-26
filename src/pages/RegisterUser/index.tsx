@@ -117,13 +117,13 @@ export function RegisterUser() {
   return(
 
     <div className="register">
-    <NavBar page='Cadastro Socioassistencial'/>
+    <NavBar page='Cadastro de Usuário'/>
 
       <section className='sectionRegister'>
 
         <div className='containerRegister'>
 
-          <h1 className='registerTitle'>Dados do Assistido</h1>
+          <h1 className='registerTitle'>Dados do Usuário</h1>
 
           <form className='form-register' id='formUser'>
 
@@ -131,7 +131,7 @@ export function RegisterUser() {
             <FormOption text='Senha' name="password"  type="password" onChange={handleChange}/>
             <FormOption text='Nome' name="name"onChange={handleChange}/>
             <FormOption text='CPF' name="cpf" onChange={handleChange}/>
-            <FormOption text='Função' name="assignment" select={true} form='formUser'onChange={handleChange} />
+            <FormOption text='Função' name="assignment" select={true} form='formUser' selectType='user' onChange={handleChange} />
             <Button text={"Cadastrar Assistido"} onClick={handleNewUser}/>
             
 

@@ -16,11 +16,16 @@ export function RegisterEvolution(){
 
   let navigate = useNavigate();
   let { id: assistedId, evolutionId } = useParams();
-  const token = localStorage.getItem('access_token')  
+  const token = localStorage.getItem('access_token');  
+
   const [evolution, setEvolution] = useState<EvolutionInterface>({
     data: '',
     description: '',
     assistedId: Number(assistedId),
+    demand: {
+      name: '',
+      status: ''
+    },
     userId: 1     // CODAR A PARTE DE RECEBER O ID DO FUNCIONÁRIO PARA REALIZAR O REGISTRO DE UMA NOVA EVOLUÇÃO !!!!!!!!!!
   });
 
@@ -31,6 +36,17 @@ export function RegisterEvolution(){
     setEvolution({
       ...evolution,
       [e.target.name]: value
+    });
+  };
+
+  function handleDemandChange (e: any){
+    const value = e.target.value;
+    setEvolution({
+      ...evolution,
+      demand:{
+        ...evolution.demand,
+        [e.target.name]: value
+      },
     });
   };
   
@@ -113,19 +129,25 @@ export function RegisterEvolution(){
         Informações de Registro
       </h1>
       <form className='form-register-evolution' >
-        <FormOption 
-          labelClass='bold' 
-          text='Data'
-          name='data'
-          onChange={handleChange}
-        />
+        <FormOption labelClass='bold' text='Data' name='data' onChange={handleChange}/>
+
+        <FormOption labelClass='bold' text='Demanda' name="name" select={true} form='form-register-evolution' onChange={handleDemandChange} />
+        {
+          evolution.demand?.name === 'MÁSCARA' ?
+          <div>
+          <input type="radio" value="PENDENTE" name="status" onChange={handleDemandChange}/> Pendente
+          <input type="radio" value="EM_ANDAMENTO" name="status" onChange={handleDemandChange}/> Em andamento
+          <input type="radio" value="CONCLUIDO" name="status" onChange={handleDemandChange}/> Concluído
+          </div>
+          :
+          <p>TESTING</p>
+        }
+
 
         <label className='label-register-evolution'>
           Descrição das atividades realizadas
         </label>
-
         <RelactoryTextArea name='description' onChange={handleChange}/>
-
         {
           evolutionId ? 
           <Button 
