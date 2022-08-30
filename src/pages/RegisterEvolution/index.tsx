@@ -8,6 +8,7 @@ import { NavBar } from '../../components/NavBar';
 import { api } from '../../services/api';
 import Swal from 'sweetalert2';
 import { EvolutionInterface } from '../../repositories/EvolutionInterface';
+import { InputDate } from '../../components/InputDate';
 
 
 
@@ -129,18 +130,33 @@ export function RegisterEvolution(){
         Informações de Registro
       </h1>
       <form className='form-register-evolution' >
-        <FormOption labelClass='bold' text='Data' name='data' onChange={handleChange}/>
-
+        <InputDate labelClass='bold' text='Data' name='data' min='2022-08-01' max='2050-12-01' onChange={handleChange}/>
+ 
         <FormOption labelClass='bold' text='Demanda' name="name" select={true} form='form-register-evolution' onChange={handleDemandChange} />
         {
-          evolution.demand?.name === 'MÁSCARA' ?
-          <div>
-          <input type="radio" value="PENDENTE" name="status" onChange={handleDemandChange}/> Pendente
-          <input type="radio" value="EM_ANDAMENTO" name="status" onChange={handleDemandChange}/> Em andamento
-          <input type="radio" value="CONCLUIDO" name="status" onChange={handleDemandChange}/> Concluído
+          evolution.demand?.name === 'AUXÍLIO' ?
+          <div className='div-radio'>
+            <label>Status</label>
+            <div className='radio-group'>
+              <input type="radio" value="PENDENTE" name="status"  onChange={handleDemandChange}/> Pendente
+              <input type="radio" value="EM_ANDAMENTO" name="status" onChange={handleDemandChange}/> Em andamento
+              <input type="radio" value="CONCLUIDO" name="status" onChange={handleDemandChange}/> Concluído
+            </div>
           </div>
           :
-          <p>TESTING</p>
+          evolution.demand?.name ===  'COBERTOR' ||  evolution.demand?.name === 'MÁSCARA' ?
+          <div className='div-radio'>
+            <label>Quantidade</label>
+            <div className='radio-group'>
+              <input type="radio" value="1" name="quantity" onChange={handleDemandChange}/> 01
+              <input type="radio" value="2" name="quantity" onChange={handleDemandChange}/> 02
+              <input type="radio" value="3" name="quantity" onChange={handleDemandChange}/> 03
+              <input type="radio" value="4" name="quantity" onChange={handleDemandChange}/> 04
+              <input type="radio" value="5" name="quantity" onChange={handleDemandChange}/> 05
+            </div>
+          </div>
+          :
+          null
         }
 
 

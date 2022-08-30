@@ -27,7 +27,7 @@ export function Assisted() {
           setRepo(response.data)
         })
     }
-  }, [])
+  })
 
 
 
@@ -61,15 +61,6 @@ export function Assisted() {
           })
 
           navigate('/home');
-        })
-      }else if(result.isDenied){
-        
-        Swal.fire({
-          title: 'Assistido excluído!',
-          customClass: {
-            title: 'title'
-          },
-          confirmButtonColor: '#58AA93'
         })
       }
     })

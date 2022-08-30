@@ -20,7 +20,7 @@
   align-items: center;
   border-radius: 20px;
   box-sizing: border-box;
-  height: 500px;
+  height: 550px;
   width: 850px;
   padding-top: 40px;
   font-family: 'Poppins', sans-serif;
@@ -52,3 +52,25 @@
 }
 
 
+
+
+/* RADIO GROUP*/
+
+.div-radio {
+  display: flex;
+  flex-direction: column;
+}
+
+.div-radio label {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #000;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+  gap: 5px;
+}
