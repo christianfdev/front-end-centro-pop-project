@@ -11,7 +11,7 @@ import { useEffect, useState } from 'react';
 export function Evolutions () {
 
   let navigate = useNavigate();
-  const token = localStorage.getItem('access_token')
+  const token = localStorage.getItem('access_token');
   const [data, setData] = useState<EvolutionInterface[] | null>(null);
   let { assistedId, userId } = useParams();
 
@@ -99,7 +99,10 @@ export function Evolutions () {
             <EvolutionCard  
               key={repo.id} 
               data={repo.data} 
-              description={repo.description} 
+              demand={repo.demand}
+              description={repo.description}
+              status={repo.status}
+              quantity={repo.quantity}
               assisted={assistedId} 
               id={repo.id} 
               del={() => handleDeleteEvolution(String(repo.id))}

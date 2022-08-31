@@ -20,4 +20,5 @@
   display: flex;
   justify-content: space-between;
   gap: 10px;
+  padding-top: 10px;
 }

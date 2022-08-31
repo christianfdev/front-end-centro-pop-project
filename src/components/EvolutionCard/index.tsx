@@ -4,15 +4,18 @@ import { Button } from '../Button';
 
 
 
-export function EvolutionCard({ data, description, id, del, assisted } : any){
+export function EvolutionCard({ data, demand, description, status, quantity, id, del, assisted } : any){
 
   let navigate = useNavigate();
 
 
   return(
     <div className='card-evolution'>
-      <p className='data-card-evolution'><span>Data: </span>{data}</p>
-      <p className='description-card-evolution'><span>Descrição: </span>{description}</p>
+      <p className=''><span>Data: </span>{data}</p>
+      <p className=''><span>Demanda: </span>{demand}</p>
+      <p className=''><span>Descrição: </span>{description}</p>
+      <p className=''><span>Status: </span>{status}</p>
+      <p className=''><span>Quantidade: </span>{quantity}</p>
       <div className='buttons-evolution'>
         <Button text='Atualizar' onClick={() => navigate(`/new-evolution/${assisted}/${id}`)}/>
         <Button text='Deletar' onClick={del}  />

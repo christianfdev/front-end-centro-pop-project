@@ -21,38 +21,35 @@ export function RegisterEvolution(){
 
   const [evolution, setEvolution] = useState<EvolutionInterface>({
     data: '',
+    demand: 'ALIMENTAÇÃO',
+    status: '',
     description: '',
     assistedId: Number(assistedId),
-    demand: {
-      name: '',
-      status: ''
-    },
-    userId: 1     // CODAR A PARTE DE RECEBER O ID DO FUNCIONÁRIO PARA REALIZAR O REGISTRO DE UMA NOVA EVOLUÇÃO !!!!!!!!!!
+    quantity: 1,
+    userId: 1     // CODAR A PARTE DE RECEBER O ID DO USUÁRIO(FUNCIONÁRIO) PARA REALIZAR O REGISTRO DE UMA NOVA EVOLUÇÃO !!!!!!!!!!
   });
 
 
 
   function handleChange (e: any){
+    
     const value = e.target.value;
+    e.target.name === 'quantity' ? 
+    setEvolution({
+      ...evolution,
+      [e.target.name]: Number(value)
+    })
+    :
     setEvolution({
       ...evolution,
       [e.target.name]: value
-    });
+    })
   };
 
-  function handleDemandChange (e: any){
-    const value = e.target.value;
-    setEvolution({
-      ...evolution,
-      demand:{
-        ...evolution.demand,
-        [e.target.name]: value
-      },
-    });
-  };
   
   async function handleNewEvolution(e: any){
     e.preventDefault();
+    console.log(evolution)
     await api.post(`/evolution`, evolution, {
       headers: {
         Authorization: `Bearer ${token}`
@@ -62,7 +59,7 @@ export function RegisterEvolution(){
      if(response.status){
        Swal.fire({
          icon: 'success',
-         text: 'Assisted created succesfully',
+         text: 'Evolution created succesfully',
          confirmButtonColor: '#58AA93',
 
        }).then(() => {
@@ -132,27 +129,27 @@ export function RegisterEvolution(){
       <form className='form-register-evolution' >
         <InputDate labelClass='bold' text='Data' name='data' min='2022-08-01' max='2050-12-01' onChange={handleChange}/>
  
-        <FormOption labelClass='bold' text='Demanda' name="name" select={true} form='form-register-evolution' onChange={handleDemandChange} />
+        <FormOption labelClass='bold' text='Demanda' name="demand" select={true} form='form-register-evolution' onChange={handleChange} />
         {
-          evolution.demand?.name === 'AUXÍLIO' ?
+          evolution.demand === 'AUXÍLIO' ?
           <div className='div-radio'>
             <label>Status</label>
             <div className='radio-group'>
-              <input type="radio" value="PENDENTE" name="status"  onChange={handleDemandChange}/> Pendente
-              <input type="radio" value="EM_ANDAMENTO" name="status" onChange={handleDemandChange}/> Em andamento
-              <input type="radio" value="CONCLUIDO" name="status" onChange={handleDemandChange}/> Concluído
+              <input type="radio" value="PENDENTE" name="status"  onChange={handleChange}/> Pendente
+              <input type="radio" value="EM_ANDAMENTO" name="status" onChange={handleChange}/> Em andamento
+              <input type="radio" value="CONCLUIDO" name="status" onChange={handleChange}/> Concluído
             </div>
           </div>
           :
-          evolution.demand?.name ===  'COBERTOR' ||  evolution.demand?.name === 'MÁSCARA' ?
+          evolution.demand ===  'COBERTOR' ||  evolution.demand === 'MÁSCARA' ?
           <div className='div-radio'>
             <label>Quantidade</label>
             <div className='radio-group'>
-              <input type="radio" value="1" name="quantity" onChange={handleDemandChange}/> 01
-              <input type="radio" value="2" name="quantity" onChange={handleDemandChange}/> 02
-              <input type="radio" value="3" name="quantity" onChange={handleDemandChange}/> 03
-              <input type="radio" value="4" name="quantity" onChange={handleDemandChange}/> 04
-              <input type="radio" value="5" name="quantity" onChange={handleDemandChange}/> 05
+              <input type="radio" value="1" name="quantity" onChange={handleChange}/> 01
+              <input type="radio" value="2" name="quantity" onChange={handleChange}/> 02
+              <input type="radio" value="3" name="quantity" onChange={handleChange}/> 03
+              <input type="radio" value="4" name="quantity" onChange={handleChange}/> 04
+              <input type="radio" value="5" name="quantity" onChange={handleChange}/> 05
             </div>
           </div>
           :
