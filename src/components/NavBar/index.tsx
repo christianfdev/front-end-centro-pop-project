@@ -13,8 +13,9 @@ export function NavBar({ page } : any){
       <p>Orientador Social</p>
     </div>
     <h1>{page}</h1>
-    <div className='sair'>
-      <p><a href="/" className='sair'>Sair</a></p>
+    <div className='option-navbar'>
+      <p><a href="/home" className='link-navbar'>Home</a></p>
+      <p><a href="/" className='link-navbar'>Sair</a></p>
     </div>
   </nav>
   )

@@ -92,7 +92,7 @@ export function Evolutions () {
 
       <section className='section-evolutions'>
       
-        <h1>Carlos Augusto Lopes Spindola</h1>
+        <h1>Meus Registros de Evoluções</h1>
 
         {data?.map(repo => {
           return (

@@ -56,6 +56,7 @@ export function Login() {
                   })
                   .then(response => {
                     localStorage.setItem('assignment', response.data.assignment);
+                    localStorage.setItem('userId', response.data.id);
                     }
                   )
                 navigate('/home')

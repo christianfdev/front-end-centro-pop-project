@@ -5,7 +5,7 @@ export function FormOption({ labelClass, text, value, onChange, name, type="text
   let classLabel = 'form-label ' + labelClass;
   let values;
 
-  selectType === 'user' ? values = ['ADMINISTRADOR', 'ORIENTADOR', 'ASSISTENTE'] : values = ['ALIMENTAÇÃO', 'AUXÍLIO', 'CESTA BÁSICA',  'COBERTOR', 'MÁSCARA']
+  selectType === 'user' ? values = ['ADMINISTRADOR', 'ORIENTADOR', 'ASSISTENTE'] : values = ['ALIMENTAÇÃO', 'AUXÍLIO', 'DOCUMENTO', 'CESTA BÁSICA',  'COBERTOR', 'MÁSCARA']
   
 
   return(

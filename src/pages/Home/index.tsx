@@ -5,12 +5,13 @@ import { NavBar } from '../../components/NavBar';
 
 export function Home(){
   let navigate = useNavigate();
-  let userId = 1;
+  let userId = localStorage.getItem('userId');
   let assignment = localStorage.getItem('assignment');
 
 
 
   console.log(assignment)
+  console.log(userId)
     return(
 
       <div className='home'>
@@ -20,13 +21,13 @@ export function Home(){
          
             
         {
-          assignment === 'ADMIN' ? 
+          assignment === 'ADMINISTRADOR' ? 
           <>
             <div className='section'>
               <span className='section-title'>Usuários</span>
               <div className='home-buttons'>
                 <Button text='Cadastrar Usuário' onClick={() => {navigate("/user")}}/>
-                <Button text='Listar Usuários' onClick={() => {navigate(`/evolution/user/${userId}`)}}/>
+                <Button text='Listar Usuários' onClick={() => {navigate(`/users`)}}/>
               </div>
             </div>
           </>

@@ -8,8 +8,6 @@ import { api } from '../../services/api';
 import Swal from 'sweetalert2';
 import { useEffect, useState } from 'react';
 
-// AINDA PRECISA FAZER AS ALTERAÇÕES NECESSÁRIAS
-// ATUALMENTE ESTÁ UMA CÓPIA DA PAGINA EVOLUTIONS
 export function Demands () {
 
   let navigate = useNavigate();
@@ -18,7 +16,6 @@ export function Demands () {
   let { assistedId, userId } = useParams();
 
   useEffect(() => {
-    if(assistedId){
       api.get(`/evolution/demands`, {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -27,16 +24,6 @@ export function Demands () {
       .then(response => {
         setData(response.data)
       })
-    }else if(userId){
-      api.get(`/evolution/user/${userId}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        }
-      })
-      .then(response => {
-        setData(response.data)
-      })
-    }
   }, [])
 
  
@@ -94,7 +81,7 @@ export function Demands () {
 
       <section className='section-evolutions'>
       
-        <h1>Carlos Augusto Lopes Spindola</h1>
+        <h1>Demandas - Centro POP</h1>
 
         {data?.map(repo => {
           return (
@@ -105,7 +92,7 @@ export function Demands () {
               description={repo.description}
               status={repo.status}
               quantity={repo.quantity}
-              assisted={assistedId} 
+              assisted={repo.assistedId} 
               id={repo.id} 
               del={() => handleDeleteEvolution(String(repo.id))}
             />

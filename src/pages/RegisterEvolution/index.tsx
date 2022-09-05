@@ -16,8 +16,10 @@ import { InputDate } from '../../components/InputDate';
 export function RegisterEvolution(){
 
   let navigate = useNavigate();
-  let { id: assistedId, evolutionId } = useParams();
-  const token = localStorage.getItem('access_token');  
+  let { id: assistedId , evolutionId } = useParams();
+  const token = localStorage.getItem('access_token');
+  const userId = localStorage.getItem('userId');  
+
 
   const [evolution, setEvolution] = useState<EvolutionInterface>({
     data: '',
@@ -26,7 +28,7 @@ export function RegisterEvolution(){
     description: '',
     assistedId: Number(assistedId),
     quantity: 1,
-    userId: 1     // CODAR A PARTE DE RECEBER O ID DO USUÁRIO(FUNCIONÁRIO) PARA REALIZAR O REGISTRO DE UMA NOVA EVOLUÇÃO !!!!!!!!!!
+    userId: Number(userId)
   });
 
 
@@ -131,7 +133,7 @@ export function RegisterEvolution(){
  
         <FormOption labelClass='bold' text='Demanda' name="demand" select={true} form='form-register-evolution' onChange={handleChange} />
         {
-          evolution.demand === 'AUXÍLIO' ?
+          evolution.demand === 'AUXÍLIO' || evolution.demand === 'DOCUMENTO' || evolution.demand === 'CESTA BÁSICA'?
           <div className='div-radio'>
             <label>Status</label>
             <div className='radio-group'>
