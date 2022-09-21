@@ -94,6 +94,7 @@ export function Demands () {
               quantity={repo.quantity}
               assisted={repo.assistedId} 
               id={repo.id} 
+              isDemand={true}
               del={() => handleDeleteEvolution(String(repo.id))}
             />
           )
