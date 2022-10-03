@@ -87,13 +87,14 @@ export function Demands () {
           return (
             <EvolutionCard  
               key={repo.id} 
+              title={repo.assisted?.name.toUpperCase()}
               data={repo.data} 
               demand={repo.demand}
               description={repo.description}
               status={repo.status}
               quantity={repo.quantity}
               assisted={repo.assistedId} 
-              id={repo.id} 
+              id={repo.id}
               isDemand={true}
               del={() => handleDeleteEvolution(String(repo.id))}
             />

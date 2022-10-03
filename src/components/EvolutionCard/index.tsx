@@ -4,13 +4,14 @@ import { Button } from '../Button';
 
 
 
-export function EvolutionCard({ data, demand, description, status, quantity, id, del, assisted, isDemand=false } : any){
+export function EvolutionCard({ data, title, demand, description, status, quantity, id, del, assisted, isDemand=false } : any){
 
   let navigate = useNavigate();
 
 
   return(
     <div className='card-evolution'>
+      <h1>{title}</h1>
       <p className=''><span>Data: </span>{data}</p>
       <p className=''><span>Demanda: </span>{demand}</p>
       <p className=''><span>Descrição: </span>{description}</p>

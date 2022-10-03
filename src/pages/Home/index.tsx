@@ -36,7 +36,6 @@ export function Home(){
             <div className='section'>
               <span className='section-title'>Minha Atividade</span>
               <div className='home-buttons'>
-                <Button text='Meus Cadastros' onClick={() => {navigate("/assisteds")}}/>
                 <Button text='Minhas Evoluções' onClick={() => {navigate(`/evolution/user/${userId}`)}}/>
               </div>
             </div>
@@ -53,7 +52,6 @@ export function Home(){
              <div className='section'>
               <span className='section-title'>Minha Atividade</span>
               <div className='home-buttons'>
-                <Button text='Meus Cadastros' onClick={() => {navigate("/assisteds")}}/>
                 <Button text='Minhas Evoluções' onClick={() => {navigate(`/evolution/user/${userId}`)}}/>
                 <Button text='Demandas' onClick={() => {navigate('/demands')}}></Button>
               </div>

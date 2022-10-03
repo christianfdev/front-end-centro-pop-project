@@ -1,4 +1,4 @@
-import { DemandInterface } from "./DemandInterface";
+import { AssistedInterface } from "./AssistedInterface";
 
 
 export type EvolutionInterface = {
@@ -10,4 +10,6 @@ export type EvolutionInterface = {
     quantity?: number
     assistedId?: number;
     userId?: number;
+    assisted?: AssistedInterface;
+
 }

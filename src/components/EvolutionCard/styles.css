@@ -12,6 +12,10 @@
   padding: 10px;
 }
 
+.card-evolution h1 {
+  color: #58AA93;
+}
+
 .card-evolution p {
   font-weight: 500;
 }

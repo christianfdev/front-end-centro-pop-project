@@ -98,6 +98,7 @@ export function Evolutions () {
           return (
             <EvolutionCard  
               key={repo.id} 
+              title={repo.assisted?.name.toUpperCase()}
               data={repo.data} 
               demand={repo.demand}
               description={repo.description}
