@@ -26,3 +26,15 @@
   gap: 10px;
   padding-top: 10px;
 }
+
+.pendente span{
+  color: orange;
+}
+
+.em_andamento span{
+  color: blue;
+}
+
+.concluido span{
+  color: green;
+}

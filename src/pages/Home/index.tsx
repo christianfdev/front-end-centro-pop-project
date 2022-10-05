@@ -34,33 +34,24 @@ export function Home(){
           : assignment === 'ORIENTADOR' ?  
           <>
             <div className='section'>
-              <span className='section-title'>Minha Atividade</span>
-              <div className='home-buttons'>
-                <Button text='Minhas Evoluções' onClick={() => {navigate(`/evolution/user/${userId}`)}}/>
-              </div>
-            </div>
-            <div className='section'>
-              <span className='section-title'>Assistidos</span>
+              <span className='section-title'>POP+</span>
               <div className='home-buttons'>
                 <Button text='Novo Cadastro' onClick={() => {navigate("/register")}}/>
                 <Button text='Listar Assistidos' onClick={() => {navigate("/assisteds")}}/>
+                <Button text='Minhas Evoluções' onClick={() => {navigate(`/evolution/user/${userId}`)}}/>
               </div>
             </div>
           </>
           : assignment === 'ASSISTENTE' ?
           <>
-             <div className='section'>
-              <span className='section-title'>Minha Atividade</span>
-              <div className='home-buttons'>
-                <Button text='Minhas Evoluções' onClick={() => {navigate(`/evolution/user/${userId}`)}}/>
-                <Button text='Demandas' onClick={() => {navigate('/demands')}}></Button>
-              </div>
-            </div>
             <div className='section'>
-              <span className='section-title'>Assistidos</span>
+              <span className='section-title'>POP+</span>
               <div className='home-buttons'>
+                <Button text='Demandas' onClick={() => {navigate('/demands')}}></Button>
                 <Button text='Novo Cadastro' onClick={() => {navigate("/register")}}/>
                 <Button text='Listar Assistidos' onClick={() => {navigate("/assisteds")}}/>
+                <Button text='Minhas Evoluções' onClick={() => {navigate(`/evolution/user/${userId}`)}}/>
+                
               </div>
             </div>
           </>

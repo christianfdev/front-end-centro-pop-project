@@ -7,15 +7,25 @@ import { Button } from '../Button';
 export function EvolutionCard({ data, title, demand, description, status, quantity, id, del, assisted, isDemand=false } : any){
 
   let navigate = useNavigate();
+  let statusClass;
+
 
 
   return(
     <div className='card-evolution'>
-      <h1>{title}</h1>
+      {
+        title ? 
+        <h1>{title}</h1>
+        : null
+      }
       <p className=''><span>Data: </span>{data}</p>
       <p className=''><span>Demanda: </span>{demand}</p>
       <p className=''><span>Descrição: </span>{description}</p>
-      <p className=''><span>Status: </span>{status}</p>
+      {
+        status ?
+        <p className={status.toLowerCase()}>Status: <span>{status}</span></p>
+        : null
+      }
       <p className=''><span>Quantidade: </span>{quantity}</p>
 
       
