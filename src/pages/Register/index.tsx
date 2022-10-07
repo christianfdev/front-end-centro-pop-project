@@ -1,5 +1,5 @@
 import './styles.css';
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 import { api } from '../../services/api';
 import Swal from 'sweetalert2';
@@ -17,11 +17,47 @@ export function Register() {
   const [assisted, setAssisted] = useState<AssistedInterface>(
     {
       name: '',
+      social_name: '',
+      mother_name: '',
+      father_name: '',
+      sex: '',
+      birth_data: '',
+      nationality: '',
+      phone_number: '',
+      city_residence: '',
+      rg: '',
+      org_e: '',
+      uf: '',
+      dt_e: '',
+      cpf: '',
+      reservist: '',
+      work_wallet: '',
+      birth_cert: '',
+      nis: '',
+      benefits: '',
       situation: '',
-      relactory: ''
+      schooling: '',
+      relactory: '',
     }
   );
   const token = localStorage.getItem('access_token')
+
+  useEffect(() => {
+    if(id){
+      api.get(`http://localhost:3001/assisted/notid/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
+        .then(response => {
+          setAssisted(response.data)
+        })
+        
+    }
+  }, [])
+
+
+
   
 
   function handleChange (e: any){
@@ -116,29 +152,29 @@ export function Register() {
 
           <form className='form-register'>
 
-            <FormOption text='Nome' name="name" onChange={handleChange}/>
-            <FormOption text='Nome Social/ Apelido' name="social_name"onChange={handleChange}/>
+            <FormOption text='Nome' name="name" value={assisted.name} onChange={handleChange}/>
+            <FormOption text='Nome Social/ Apelido' name="social_name" value={assisted.social_name} onChange={handleChange}/>
             <span>Filiação</span> 
-            <FormOption text='Nome da Mãe' name="mother_name"onChange={handleChange}/>
-            <FormOption text='Nome do Pai' name="father_name" onChange={handleChange}/>
-            <FormOption text='Sexo' name="sex" onChange={handleChange}/>
-            <FormOption text='Data de Nascimento' name="birth_data" onChange={handleChange}/>
-            <FormOption text='Nacionalidade' name="nationality" onChange={handleChange}/>
-            <FormOption text='Número de Telefone/ Celular' name="phone_number"onChange={handleChange}/>
-            <FormOption text='Cidade em que reside' name="city_residence" onChange={handleChange}/>
-            <FormOption text='RG' name="rg" onChange={handleChange}/>
-            <FormOption text='Orgão expedidor' name="org_e" onChange={handleChange}/>
-            <FormOption text='UF' name="uf" onChange={handleChange}/>
-            <FormOption text='Data de Expedição' name="dt_e" onChange={handleChange}/>
-            <FormOption text='CPF' name="cpf" onChange={handleChange}/>
-            <FormOption text='Reservista' name="reservist" onChange={handleChange}/>
-            <FormOption text='Carteira de Trabalho' name="work_wallet" onChange={handleChange}/>
-            <FormOption text='Certidão de Nascimento' name="birth_cert" onChange={handleChange}/>
-            <FormOption text='NIS' name="nis" onChange={handleChange}/>
-            <FormOption text='Recebe algum benefício? Se sim, quais?' name="benefits" onChange={handleChange}/>
-            <FormOption text='Situação' name="situation" onChange={handleChange}/>
-            <FormOption text='Escolaridade' name="schooling" onChange={handleChange}/>
-            <RelactoryTextArea text='Relatório'  name="relactory"  onChange={handleChange}/>
+            <FormOption text='Nome da Mãe' name="mother_name" value={assisted.mother_name} onChange={handleChange}/>
+            <FormOption text='Nome do Pai' name="father_name" value={assisted.father_name} onChange={handleChange}/>
+            <FormOption text='Sexo' name="sex" value={assisted.sex} onChange={handleChange}/>
+            <FormOption text='Data de Nascimento' name="birth_data" value={assisted.birth_data} onChange={handleChange}/>
+            <FormOption text='Nacionalidade' name="nationality" value={assisted.nationality} onChange={handleChange}/>
+            <FormOption text='Número de Telefone/ Celular' name="phone_number" value={assisted.phone_number} onChange={handleChange}/>
+            <FormOption text='Cidade em que reside' name="city_residence" value={assisted.city_residence} onChange={handleChange}/>
+            <FormOption text='RG' name="rg" value={assisted.rg} onChange={handleChange}/>
+            <FormOption text='Orgão expedidor' name="org_e" value={assisted.org_e} onChange={handleChange}/>
+            <FormOption text='UF' name="uf" value={assisted.uf} onChange={handleChange}/>
+            <FormOption text='Data de Expedição' name="dt_e" value={assisted.dt_e} onChange={handleChange}/>
+            <FormOption text='CPF' name="cpf" value={assisted.cpf} onChange={handleChange}/>
+            <FormOption text='Reservista' name="reservist" value={assisted.reservist} onChange={handleChange}/>
+            <FormOption text='Carteira de Trabalho' name="work_wallet" value={assisted.work_wallet} onChange={handleChange}/>
+            <FormOption text='Certidão de Nascimento' name="birth_cert" value={assisted.birth_cert} onChange={handleChange}/>
+            <FormOption text='NIS' name="nis" value={assisted.nis} onChange={handleChange}/>
+            <FormOption text='Recebe algum benefício? Se sim, quais?' name="benefits" value={assisted.benefits} onChange={handleChange}/>
+            <FormOption text='Situação' name="situation" value={assisted.situation} onChange={handleChange}/>
+            <FormOption text='Escolaridade' name="schooling" value={assisted.schooling} onChange={handleChange}/>
+            <RelactoryTextArea text='Relatório'  name="relactory"  value={assisted.relactory} onChange={handleChange}/>
 
             {
               id ? 

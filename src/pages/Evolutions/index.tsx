@@ -14,6 +14,7 @@ export function Evolutions () {
   const token = localStorage.getItem('access_token');
   const [data, setData] = useState<EvolutionInterface[] | null>(null);
   let { assistedId, userId } = useParams();
+  let perfilOn = false;
 
   useEffect(() => {
     if(assistedId){
@@ -33,6 +34,7 @@ export function Evolutions () {
       })
       .then(response => {
         setData(response.data)
+        
       })
     }
   }, [])
@@ -94,6 +96,10 @@ export function Evolutions () {
       
         <h1>Meus Registros de Evoluções</h1>
 
+        {
+          userId ? perfilOn = true : perfilOn = false
+        }
+
         {data?.map(repo => {
           return (
             <EvolutionCard  
@@ -104,8 +110,9 @@ export function Evolutions () {
               description={repo.description}
               status={repo.status}
               quantity={repo.quantity}
-              assisted={assistedId} 
+              assisted={repo.assistedId} 
               id={repo.id} 
+              perfilOn={perfilOn}
               del={() => handleDeleteEvolution(String(repo.id))}
             />
           )
