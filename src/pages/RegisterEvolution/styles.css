@@ -1,15 +1,11 @@
 
-.register-evolution{
-  min-height: 100vh;
-  background-color: #58AA93;
-}
-
 
 .section-register-evolution {
-  height: 850px;
+  height: 92vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #58AA93;
 }
 
 

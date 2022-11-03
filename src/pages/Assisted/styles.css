@@ -1,13 +1,9 @@
-.assisted{
-  background-color: #58AA93;
-  min-height: 970px;
-}
-
 .sectionAssisted {
-  height: auto;
+  height: 92vh;
   display: flex;
   justify-content: center;
-  padding: 20px 0 20px 0;
+  align-items: center;
+  background-color: #58AA93;
 }
 
 .containerAssisted {
@@ -25,6 +21,15 @@
 }
 
 .assistedData {
+  padding-top: 20px;
+}
+
+.data {
+  display: flex;
+  gap: 440px;
+}
+
+.relatorio {
   padding-top: 20px;
 }
 

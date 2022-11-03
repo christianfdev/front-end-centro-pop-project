@@ -1,14 +1,12 @@
-.home {
-  background-color: #58AA93;
-  min-height: 58.091rem;
-  width: auto;
-}
+
 
 .home-options {
-  height: 850px;
   display: flex;
+  height: 92vh;
   align-items: center;
   justify-content: center;
+  background-color: #58AA93;
+  width: auto;
   gap: 50px;
 }
 

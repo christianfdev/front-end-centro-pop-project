@@ -1,12 +1,10 @@
 .evolutions {
   background-color: #58AA93;
-  min-height: 58.091rem;
-  height: auto;
+  min-height: 100vh;
   width: auto;
 }
 
 .section-evolutions {
-  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;

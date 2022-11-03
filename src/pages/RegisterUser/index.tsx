@@ -116,14 +116,14 @@ export function RegisterUser() {
   
   return(
 
-    <div className="register">
+    <div className="registerUser">
     <NavBar page='Cadastro de Usuário'/>
 
-      <section className='sectionRegister'>
+      <section className='sectionRegisterUser'>
 
-        <div className='containerRegister'>
+        <div className='containerRegisterUser'>
 
-          <h1 className='registerTitle'>Dados do Usuário</h1>
+          <h1 className='registerUserTitle'>Dados do Usuário</h1>
 
           <form className='form-register' id='formUser'>
 

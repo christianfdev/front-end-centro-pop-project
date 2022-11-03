@@ -13,7 +13,7 @@ export function UserCard({ name, username, assignment } : any){
     <div className='card-user'>
       <p className=''><span>Nome: </span>{name}</p>
       <p className=''><span>Username: </span>{username}</p>
-      <p className=''><span>Assignemt: </span>{assignment}</p>
+      <p className=''><span>Atribuição: </span>{assignment}</p>
       <div className='buttons-user'>
         <Button text='Atualizar'/>
         <Button text='Deletar' />

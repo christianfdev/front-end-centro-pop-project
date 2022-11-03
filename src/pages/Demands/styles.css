@@ -1,11 +1,10 @@
-.evolutions {
+.demands {
   background-color: #58AA93;
-  min-height: 58.091rem;
-  height: auto;
+  min-height: 100vh;
   width: auto;
 }
 
-.section-evolutions {
+.section-demands {
   height: auto;
   display: flex;
   flex-direction: column;
@@ -13,8 +12,26 @@
   padding-bottom: 20px;
 }
 
-h1 {
+.title-demands {
   font-family: 'Poppins', sans-serif;
   color: #fff;
-  padding-top: 10px;
+  padding: 10px 0 20px 0;
+}
+
+
+.search-demand {
+  width: 420px;
+  height: 30px;
+  font-size: 14px;
+  border-radius: 8px;
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+
+.icon-demand {
+  position: absolute;
+  margin: 74px 0 0 200px;
+  width: 20px;
+  height: 20px;
+
 }

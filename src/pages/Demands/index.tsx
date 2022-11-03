@@ -4,7 +4,7 @@ import { EvolutionInterface } from '../../repositories/EvolutionInterface';
 import { EvolutionCard } from '../../components/EvolutionCard';
 import { useNavigate, useParams } from 'react-router-dom';
 import { api } from '../../services/api';
-
+import { BiSearchAlt } from 'react-icons/bi';
 import Swal from 'sweetalert2';
 import { useEffect, useState } from 'react';
 
@@ -13,7 +13,7 @@ export function Demands () {
   let navigate = useNavigate();
   const token = localStorage.getItem('access_token');
   const [data, setData] = useState<EvolutionInterface[] | null>(null);
-  let { assistedId, userId } = useParams();
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
       api.get(`/evolution/demands`, {
@@ -76,29 +76,36 @@ export function Demands () {
 
 
   return(
-    <div className='evolutions'>
+    <div className='demands'>
       <NavBar page='Evoluções'/>
 
-      <section className='section-evolutions'>
+      <section className='section-demands'>
       
-        <h1>Demandas - Centro POP</h1>
+        <h1 className='title-demands'>Demandas - Centro POP</h1>
 
-        {data?.map(repo => {
-          return (
-            <EvolutionCard  
-              key={repo.id} 
-              title={repo.assisted?.name.toUpperCase()}
-              data={repo.data} 
-              demand={repo.demand}
-              description={repo.description}
-              status={repo.status}
-              quantity={repo.quantity}
-              assisted={repo.assistedId} 
-              id={repo.id}
-              perfilOn={true}
-              del={() => handleDeleteEvolution(String(repo.id))}
-            />
-          )
+        <input className='search-demand' type="text" placeholder='Nome do assistido' value={search} onChange={(e) => setSearch(e.target.value.toUpperCase())}/>
+        <BiSearchAlt className='icon-demand'/>
+
+
+        {
+        data?.map(repo => {
+          if(repo.assisted?.name.toUpperCase().includes(search)){
+            return (
+              <EvolutionCard  
+                key={repo.id} 
+                title={repo.assisted?.name.toUpperCase()}
+                data={repo.data} 
+                demand={repo.demand}
+                description={repo.description}
+                status={repo.status}
+                quantity={repo.quantity}
+                assisted={repo.assistedId} 
+                id={repo.id}
+                perfilOn={true}
+                del={() => handleDeleteEvolution(String(repo.id))}
+              />
+            )
+          }
         })
 
         }

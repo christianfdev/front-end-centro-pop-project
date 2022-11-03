@@ -1,12 +1,31 @@
 .listing-assisteds {
   background-color: #58AA93;
-  min-height: 58.091rem;
+  min-height: 100vh;
   width: auto;
+  padding-bottom: 20px;
 }
 
 .section-list {
-  height: 850px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 20px;
+}
+
+
+.search {
+  width: 420px;
+  height: 30px;
+  font-size: 14px;
+  border-radius: 8px;
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+
+.icon {
+  position: absolute;
+  margin: 7px 0 0 200px;
+  width: 20px;
+  height: 20px;
+
 }

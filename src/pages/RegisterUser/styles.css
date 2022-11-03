@@ -1,36 +1,34 @@
-.register{
-  min-height: 1500px;
+
+.sectionRegisterUser {
+  height: 92vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #58AA93;
 }
 
-.sectionRegister {
-  display: flex;
-  justify-content: center;
-  padding-top: 20px;
-}
 
-
-.containerRegister {
+.containerRegisterUser {
   display: flex;
   flex-direction: column;
   background-color: #fff;
   align-items: center;
   border-radius: 20px;
   box-sizing: border-box;
-  height: auto;
-  width: 850px;
+  height: 500px;
+  width: 650px;
   padding: 20px;
   font-family: 'Poppins', sans-serif;
 }
 
-.containerRegister span {
+.containerRegisterUser span {
   font-weight: 500;
   font-size: 14px;
   padding-top: 4px;
 }
 
 
-.registerTitle {
+.registerUserTitle {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
   color: #ADCB5C;
@@ -43,7 +41,7 @@
   text-align: left;
 }
 
-.confirmRegisterTitle {
+.confirmRegisterUserTitle {
   font-family: 'Poppins', sans-serif;
   font-size: 18px!important;
   font-weight: 300!important;
