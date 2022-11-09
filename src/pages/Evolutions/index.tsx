@@ -4,6 +4,7 @@ import { EvolutionInterface } from '../../repositories/EvolutionInterface';
 import { EvolutionCard } from '../../components/EvolutionCard';
 import { useNavigate, useParams } from 'react-router-dom';
 import { api } from '../../services/api';
+import { BiSearchAlt } from 'react-icons/bi';
 
 import Swal from 'sweetalert2';
 import { useEffect, useState } from 'react';
@@ -13,6 +14,7 @@ export function Evolutions () {
   let navigate = useNavigate();
   const token = localStorage.getItem('access_token');
   const [data, setData] = useState<EvolutionInterface[] | null>(null);
+  const [search, setSearch] = useState("");
   let { assistedId, userId } = useParams();
   let perfilOn = false;
 
@@ -94,10 +96,22 @@ export function Evolutions () {
 
       <section className='section-evolutions'>
       
-        <h1>Meus Registros de Evoluções</h1>
+        
 
         {
           userId ? perfilOn = true : perfilOn = false
+        }
+
+        {
+          perfilOn ?
+          <>
+          <h1>Meus Registros de Evoluções</h1>
+          <input className='search-evolutions' type="text" placeholder='Nome do assistido' value={search} onChange={(e) => setSearch(e.target.value.toUpperCase())}/>
+          <BiSearchAlt className='icon-evolutions'/>
+          </>
+          : 
+          <h1>Minha evolução</h1>
+
         }
 
         {data?.map(repo => {

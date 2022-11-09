@@ -16,3 +16,22 @@ h1 {
   color: #fff;
   padding-top: 10px;
 }
+
+.search-evolutions {
+  width: 420px;
+  height: 30px;
+  font-size: 14px;
+  border-radius: 8px;
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+
+.icon-evolutions {
+  position: absolute;
+  margin: 54px 0 0 200px;
+  width: 20px;
+  height: 20px;
+
+}
+
+
