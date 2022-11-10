@@ -16,7 +16,7 @@ export function ListingAssisteds () {
 
   useEffect(() => {
     if(token){
-      api.get('http://localhost:3001/assisted', {
+      api.get('/assisted', {
         headers: {
           Authorization: `Bearer ${token}`
         }

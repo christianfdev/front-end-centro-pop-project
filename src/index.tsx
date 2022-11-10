@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import { 
   BrowserRouter, 
+  HashRouter,
   Routes, 
   Route, 
 } from 'react-router-dom';
@@ -22,7 +23,8 @@ const root = ReactDOM.createRoot(
 );
 root.render(
 
-  <BrowserRouter>
+
+  <HashRouter>
     <Routes>
       <Route path="/" element={<Login />}/>
       <Route path="home" element={<Home />}/>
@@ -38,7 +40,8 @@ root.render(
       <Route path="demands" element={<Demands />}/>
       <Route path='users' element={<ListingUsers/>}/>
     </Routes>
-  </BrowserRouter>
+  </HashRouter>
+
     
 );
 

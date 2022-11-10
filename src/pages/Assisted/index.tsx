@@ -18,7 +18,7 @@ export function Assisted() {
 
   useEffect(() => {
     if(token){
-      api.get(`http://localhost:3001/assisted/${id}`, {
+      api.get(`/assisted/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }

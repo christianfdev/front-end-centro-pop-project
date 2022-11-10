@@ -44,7 +44,7 @@ export function Register() {
 
   useEffect(() => {
     if(id){
-      api.get(`http://localhost:3001/assisted/notid/${id}`, {
+      api.get(`/assisted/notid/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }

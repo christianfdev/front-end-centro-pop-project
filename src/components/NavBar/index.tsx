@@ -14,8 +14,8 @@ export function NavBar({ page } : any){
     </div>
     <h1>{page}</h1>
     <div className='option-navbar'>
-      <p><a href="/home" className='link-navbar'>Home</a></p>
-      <p><a href="/" className='link-navbar'>Sair</a></p>
+      <p><a href="centro-pop-site/home" className='link-navbar'>Home</a></p>
+      <p><a href="centro-pop-site/" className='link-navbar'>Sair</a></p>
     </div>
   </nav>
   )

@@ -15,7 +15,7 @@ export function ListingUsers () {
 
   useEffect(() => {
     if(token){
-      api.get('http://localhost:3001/user', {
+      api.get('/user', {
         headers: {
           Authorization: `Bearer ${token}`
         }

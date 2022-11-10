@@ -1,4 +1,5 @@
 import logo from './centropop.png'
+import React from 'react'
 import './styles.css';
 import { useNavigate } from 'react-router-dom';
 import { InputText } from '../../components/InputText';
@@ -49,7 +50,7 @@ export function Login() {
        
               }).then(async () => {
                 localStorage.setItem('access_token', response.data.access_token);
-                await api.get('http://localhost:3001/me', {
+                await api.get('/me', {
                     headers: {
                       Authorization: `Bearer ${response.data.access_token}`,
                     }
