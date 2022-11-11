@@ -1,11 +1,11 @@
 .listing-users {
   background-color: #58AA93;
-  height: 970px;
+  min-height: 100vh;
   width: auto;
+  padding-bottom: 20px;
 }
 
 .section-user-list {
-  height: 850px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,4 +27,15 @@
   width: 20px;
   height: 20px;
 
+}
+
+@media (max-width: 500px) {
+  .search-users {
+    width: 300px;
+    min-height: 30px;
+  }
+
+  .icon-users {
+    margin: 28px 0 0 135px;
+  }
 }

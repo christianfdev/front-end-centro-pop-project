@@ -96,7 +96,7 @@ export function Assisted() {
                   <p><span>Orgão Emissor: </span>  {repo?.org_e} </p>
                   <p><span>UF: </span>  {repo?.uf} </p>
                   <p><span>Data de Emissão: </span>  {repo?.dt_e} </p>
-                  <p className='relatorio'><span>Relatório: </span>  {repo?.relactory} </p>
+                  
                 </div>
 
                 <div className="two">
@@ -113,6 +113,7 @@ export function Assisted() {
                   <p><span>Escolaridade: </span>  {repo?.schooling} </p>
                 </div>
               </div>
+                <p className='relatorio'><span>Relatório: </span>  {repo?.relactory} </p>
 
               <div className='assisted-buttons'>
 

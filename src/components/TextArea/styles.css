@@ -54,3 +54,12 @@
  
 }
 
+@media (max-width: 500px){
+  .textarea-register {
+    width: 70vw;
+  }
+
+  .label{
+    text-align: center;
+  }
+}

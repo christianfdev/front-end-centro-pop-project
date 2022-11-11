@@ -35,3 +35,21 @@
   font-size: 16px;
   padding-right: 1rem;
 }
+
+
+
+@media (max-width: 500px){
+
+  .navbar h1 {
+    font-size: 12px;
+    padding: 0 0 1px 0;
+  }
+
+  .infoUser {
+    font-size: 12px;
+  }
+
+  .option-navbar {
+    font-size: 12px;
+  }
+}

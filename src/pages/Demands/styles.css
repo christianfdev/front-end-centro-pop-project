@@ -35,3 +35,14 @@
   height: 20px;
 
 }
+
+
+@media (max-width: 500px) {
+  .search-demand {
+    width: 300px;
+  }
+
+  .icon-demand {
+    margin: 74px 0 0 135px;
+  }
+}

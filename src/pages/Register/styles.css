@@ -1,6 +1,7 @@
 .register{
   min-height: 1500px;
   background-color: #58AA93;
+  width: 100vw;
 }
 
 .sectionRegister {
@@ -48,4 +49,15 @@
   font-family: 'Poppins', sans-serif;
   font-size: 18px!important;
   font-weight: 300!important;
+}
+
+@media (max-width: 500px) {
+  .containerRegister {
+    width: 90vw;
+  }
+
+  .form-register {
+    align-items: center;
+  }
+
 }

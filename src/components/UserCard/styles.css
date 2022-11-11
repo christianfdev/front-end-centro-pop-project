@@ -22,3 +22,16 @@
   gap: 10px;
   padding-top: 10px;
 }
+
+
+@media (max-width: 500px){
+  .card-user {
+    min-width: 320px;
+    min-height: 250px;
+    align-items: center;
+  }
+
+  .buttons-user {
+    flex-direction: column;
+  }
+}

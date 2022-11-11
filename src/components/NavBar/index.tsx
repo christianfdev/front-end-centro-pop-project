@@ -10,7 +10,7 @@ export function NavBar({ page } : any){
     <nav className='navbar'>
     <div className='infoUser'>
       <p>Christian</p>
-      <p>Orientador Social</p>
+      <p>Orientador</p>
     </div>
     <h1>{page}</h1>
     <div className='option-navbar'>
