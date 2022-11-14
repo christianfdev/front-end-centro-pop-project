@@ -55,9 +55,13 @@ export function Login() {
                       Authorization: `Bearer ${response.data.access_token}`,
                     }
                   })
-                  .then(response => {
+                  .then(async response => {
                     localStorage.setItem('assignment', response.data.assignment);
                     localStorage.setItem('userId', response.data.id);
+                    await api.get(`http://localhost:3000/user/info/${localStorage.getItem('userId')}`)
+                      .then(response => {
+                        localStorage.setItem('name', response.data.name);
+                    })
                     }
                   )
                 navigate('/home')

@@ -9,22 +9,12 @@ export function Home(){
 
   let navigate = useNavigate();
   let userId = localStorage.getItem('userId');
-  const [name, setName] = useState('');
-  let token = localStorage.getItem('token');
   let assignment = localStorage.getItem('assignment');
-
-
-  useEffect(() => {
-      api.get(`http://localhost:3000/user/info/${userId}`)
-        .then(response => {
-          setName(response.data.name);
-        })
-  })
 
     return(
 
       <div className='home'>
-        <NavBar page='Página Inicial' assignment={assignment} name={name}/>
+        <NavBar page='Página Inicial'/>
 
         <section className='home-options'>
          
