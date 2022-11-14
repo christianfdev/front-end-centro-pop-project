@@ -1,16 +1,13 @@
 import './styles.css';
-import { useNavigate } from 'react-router-dom'
 
-export function NavBar({ page } : any){
+export function NavBar({ page, name, assignment } : any){
 
-  let navigate = useNavigate();
-
-
+  
   return(
     <nav className='navbar'>
     <div className='infoUser'>
-      <p>Christian</p>
-      <p>Orientador</p>
+      <p>{name}</p>
+      <p>{assignment.toLowerCase()}</p>
     </div>
     <h1>{page}</h1>
     <div className='option-navbar'>

@@ -2,20 +2,29 @@ import './styles.css';
 import { Button } from '../../components/Button';
 import { useNavigate } from 'react-router-dom';
 import { NavBar } from '../../components/NavBar';
+import { useEffect, useState } from 'react';
+import { api } from '../../services/api';
 
 export function Home(){
+
   let navigate = useNavigate();
   let userId = localStorage.getItem('userId');
+  const [name, setName] = useState('');
+  let token = localStorage.getItem('token');
   let assignment = localStorage.getItem('assignment');
 
 
+  useEffect(() => {
+      api.get(`http://localhost:3000/user/info/${userId}`)
+        .then(response => {
+          setName(response.data.name);
+        })
+  })
 
-  console.log(assignment)
-  console.log(userId)
     return(
 
       <div className='home'>
-        <NavBar page='Página Inicial'/>
+        <NavBar page='Página Inicial' assignment={assignment} name={name}/>
 
         <section className='home-options'>
          
