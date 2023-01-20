@@ -13,6 +13,11 @@ TECNOLOGIAS UTILIZADAS
 - ReactJS
 - TypeScript
 
+---
+
+CONSIDERAÇÕES FINAIS
+
+O objetivo é assim que tiver mais disponibilidade dar seguimento no desenvolvimento do projeto, adaptando ele para atender melhor a realidade dos equipamentos da Assistência Social do Brasil.
 
 
 
